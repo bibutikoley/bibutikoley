@@ -1,16 +1,17 @@
-### Hi there 👋
+## Hola, Welcome to my profile 👋
 
-<!--
-**bibutikoley/bibutikoley** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+- 🔭 I’m currently working on Android Koltin MVVM.
+- 🌱 I’m currently learning Flutter.
+- 👯 I’m looking to collaborate on Email or any other Code Streaming platform.
+- 🤔 I’m looking for help with Advaced Mobile app development concepts.
+- 💬 Ask me about Mobile App Development, Java, Kotlin, Firebase, Data Security, Code Patterns, Architecture.
+- 📫 How to reach me: 
+         - [Github - @bibutikoley](https://bibutikoley.github.io/)
+         - [Twitter - @iambibuti](https://twitter.com/iambibuti)
+         - [LinkedIn - @bibutikoley](https://www.linkedin.com/in/bibutikoley/)
+         - [Email-ID - bibutikoley@outlook.com](mailto://bibutikoley@outlook.com)
+- ⚡ Fun fact: I like listening to Music😋.
 
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+#### Let's make the best use of the Technology by working collaboratively.
+#### Thank You & Regards,
+### Bibuti Koley
