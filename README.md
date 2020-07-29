@@ -12,6 +12,5 @@
          - [Email-ID - bibutikoley@outlook.com](mailto://bibutikoley@outlook.com)
 - ⚡ Fun fact: I like listening to Music😋.
 
-#### Let's make the best use of the Technology by working collaboratively.
-#### Thank You & Regards,
+#### Let's make the best use of the Technology by working collaboratively.<br>Thank You & Regards,
 ### Bibuti Koley
