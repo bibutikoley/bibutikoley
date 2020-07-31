@@ -1,4 +1,4 @@
-## Hola, Welcome to my profile 👋
+## Namaste🙏, Welcome to my profile 👋
 
 - 🔭 I’m currently working on Android Koltin MVVM.
 - 🌱 I’m currently learning Flutter.
