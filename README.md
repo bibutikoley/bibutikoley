@@ -2,7 +2,7 @@
 
 ### Bibuti Koley
 
-- 🔭 I’m currently working on Android Koltin MVVM.
+- 🔭 I’m currently working on Android Kotlin MVVM.
 - 🌱 I’m currently learning Flutter.
 - 👯 I’m looking to collaborate on Email or any other Code Streaming platform.
 - 🤔 I’m looking for help with Advaced Mobile app development concepts.
