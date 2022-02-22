@@ -15,7 +15,7 @@
 
 ⚡ Fun fact: I like listening to Music 🎧
 
-#### Let's work collaboratively and make the best use of the Technology.
+#### Let's work collaboratively and make the best use of Technology.
 
 #### Bibuti's Stats 📈
 
