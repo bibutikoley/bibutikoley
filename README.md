@@ -19,7 +19,7 @@
 
 #### Bibuti's Stats 📈
 
-![](https://komarev.com/ghpvc/?username=bibutikoley)
+#![](https://komarev.com/ghpvc/?username=bibutikoley)
 
 ![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=bibutikoley&show_icons=true)
 
