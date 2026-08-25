@@ -55,17 +55,17 @@ modern UI with Jetpack Compose, and secure, maintainable code.
 ## 📈 GitHub Stats
 
 <p align="left">
-  <img height="165" alt="Bibuti's GitHub stats" src="https://github-readme-stats.vercel.app/api?username=bibutikoley&show_icons=true&theme=blue-green&hide_border=true" />
-  <img height="165" alt="Top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=bibutikoley&layout=compact&theme=blue-green&hide_border=true" />
+  <img alt="Bibuti's GitHub stats" src="assets/github-stats.svg" width="440" />
+  <img alt="Most used languages" src="assets/top-languages.svg" width="440" />
 </p>
 
 <p align="left">
-  <img height="165" alt="Contribution streak" src="https://streak-stats.demolab.com?user=bibutikoley&theme=blue-green&hide_border=true" />
+  <img alt="Contribution activity over the past year" src="assets/activity.svg" width="890" />
 </p>
 
-<p align="left">
-  <img alt="Contribution activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=bibutikoley&theme=github-compact&hide_border=true" />
-</p>
+<sub>These cards are generated daily by
+<a href=".github/workflows/profile-stats.yml">a GitHub Action</a> and committed to this
+repository, so they render from GitHub itself rather than a third-party service.</sub>
 
 ## 📫 Reach Me
 
