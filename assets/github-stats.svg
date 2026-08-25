@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="460" height="296" viewBox="0 0 460 296" role="img" aria-label="Bibuti Koley's GitHub statistics">
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="312" viewBox="0 0 460 312" role="img" aria-label="Bibuti Koley's GitHub statistics">
 <title>Bibuti Koley's GitHub statistics</title>
 <style>
     :root {
@@ -17,7 +17,7 @@
     .value { font: 600 13px 'Segoe UI', Ubuntu, Sans-Serif; fill: var(--text); }
     .muted { font: 400 10px 'Segoe UI', Ubuntu, Sans-Serif; fill: var(--muted); }
 </style>
-<rect class="card" x="0.5" y="0.5" rx="6" width="459" height="295"/>
+<rect class="card" x="0.5" y="0.5" rx="6" width="459" height="311"/>
 <text class="title" x="25" y="35">Bibuti Koley's GitHub Stats</text>
 <text class="muted" x="25" y="53">112 contributions in the last year</text>
 <text class="label" x="25" y="74">Total Stars Earned</text>
@@ -35,5 +35,6 @@
 <text class="label" x="25" y="230">Followers</text>
 <text class="value" x="435" y="230" text-anchor="end">8</text>
 <text class="label" x="25" y="256">Current Streak</text>
-<text class="value" x="435" y="256" text-anchor="end">1 days</text>
+<text class="value" x="435" y="256" text-anchor="end">1 day</text>
+<text class="muted" x="25" y="288">Per-type counts cover public contributions only</text>
 </svg>
