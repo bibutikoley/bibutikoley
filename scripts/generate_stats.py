@@ -197,10 +197,10 @@ def render_stats(s: dict, path: str) -> None:
         ("Code Reviews", fmt(s["reviews"])),
         ("Public Repositories", fmt(s["repo_count"])),
         ("Followers", fmt(s["followers"])),
-        ("Current Streak", f"{s['streak']} days"),
+        ("Current Streak", f"{s['streak']} day{'s' if s['streak'] != 1 else ''}"),
     ]
     width, top, step = 460, 74, 26
-    height = top + step * len(rows) + 14
+    height = top + step * len(rows) + 30
     out = svg_open(width, height, f"{s['name']}'s GitHub statistics")
     out.append(f'<text class="title" x="25" y="35">{escape(s["name"])}\'s GitHub Stats</text>')
     out.append(
@@ -211,6 +211,12 @@ def render_stats(s: dict, path: str) -> None:
         y = top + i * step
         out.append(f'<text class="label" x="25" y="{y}">{escape(label)}</text>')
         out.append(f'<text class="value" x="{width - 25}" y="{y}" text-anchor="end">{escape(value)}</text>')
+    # The calendar total counts private contributions; the per-type rows above
+    # only see public ones unless a STATS_TOKEN with read:user is configured.
+    out.append(
+        f'<text class="muted" x="25" y="{top + step * len(rows) + 6}">'
+        "Per-type counts cover public contributions only</text>"
+    )
     out.append("</svg>")
     write(path, out)
 
