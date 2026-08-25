@@ -1,24 +1,79 @@
-# Hello, Welcome to my profile
+# Hi there, I'm Bibuti Koley 👋
 
-### Bibuti Koley
+**Mobile Engineer — Android & Kotlin Multiplatform**
 
-- 🔭 I’m currently working on Android and Kotlin Multiplatform.
-- 🌱 I’m currently learning Flutter and iOS Development.
-- 👯 I’m looking to collaborate on Email or any other Code Streaming platform.
-- 🤔 I’m looking for help with Advaced Mobile app development concepts.
-- 💬 Ask me about Mobile App Development, Java, Kotlin, Firebase, Data Security, Code Patterns, Architecture, Compose, Multiplatform.
-- 📫 How to reach me:<br />
-         - [Github - @bibutikoley](https://bibutikoley.github.io/)<br />
-         - [Twitter - @iambibuti](https://twitter.com/iambibuti)<br />
-         - [LinkedIn - @bibutikoley](https://www.linkedin.com/in/bibutikoley/)<br />
-         - [Email-ID - bibutikoley@outlook.com](mailto://bibutikoley@outlook.com)
+Building native and cross-platform mobile apps with a focus on clean architecture,
+modern UI with Jetpack Compose, and secure, maintainable code.
 
-⚡ Fun fact: I like listening to Music 🎧
+---
 
-#### Let's work collaboratively and make the best use of Technology.
+## About Me
 
-#### Bibuti's Stats 📈
+- 🔭 &nbsp;Currently working on **Android** and **Kotlin Multiplatform**
+- 🌱 &nbsp;Currently learning **Flutter** and **iOS development**
+- 👯 &nbsp;Open to collaborating on **email clients** and **code-streaming platforms**
+- 🤔 &nbsp;Looking to go deeper into **advanced mobile app development** concepts
+- 💬 &nbsp;Ask me about **Mobile App Development, Kotlin, Java, Compose, Multiplatform, Firebase, Architecture, Design Patterns and Data Security**
+- ⚡ &nbsp;Fun fact: I like listening to music 🎧
 
-![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=bibutikoley&show_icons=true)
+## Tech Stack
 
-![Your Repository's Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=bibutikoley&theme=blue-green)
+**Languages**
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=dart&logoColor=white)
+![Swift](https://img.shields.io/badge/Swift-F05138?style=flat-square&logo=swift&logoColor=white)
+
+**Frameworks & Platforms**
+![Android](https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=android&logoColor=white)
+![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-4285F4?style=flat-square&logo=jetpackcompose&logoColor=white)
+![Kotlin Multiplatform](https://img.shields.io/badge/Kotlin%20Multiplatform-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)
+
+**Tools**
+![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84?style=flat-square&logo=androidstudio&logoColor=white)
+![Gradle](https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=gradle&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+
+## 🚧 Currently Building
+
+- **Android apps** with Jetpack Compose — modern declarative UI, clean architecture, and testable layers
+- **Kotlin Multiplatform** — sharing domain and data logic across Android and iOS
+- **Cross-platform exploration** — picking up Flutter and native iOS development to round out the mobile stack
+
+## 🎯 What I Focus On
+
+| Area | What that means in practice |
+| --- | --- |
+| **Architecture** | MVVM / MVI, clear module boundaries, dependency injection, code that survives feature growth |
+| **Modern Android UI** | Jetpack Compose, Material 3, state hoisting, unidirectional data flow |
+| **Kotlin Multiplatform** | Shared business logic, `expect`/`actual` boundaries, platform-idiomatic UI on top |
+| **Data Security** | Secure storage, safe key handling, sensible auth and network hardening |
+| **Backend-as-a-service** | Firebase — Auth, Firestore, Cloud Messaging, Crashlytics |
+
+## 📈 GitHub Stats
+
+<p align="left">
+  <img height="165" alt="Bibuti's GitHub stats" src="https://github-readme-stats.vercel.app/api?username=bibutikoley&show_icons=true&theme=blue-green&hide_border=true" />
+  <img height="165" alt="Top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=bibutikoley&layout=compact&theme=blue-green&hide_border=true" />
+</p>
+
+<p align="left">
+  <img height="165" alt="Contribution streak" src="https://streak-stats.demolab.com?user=bibutikoley&theme=blue-green&hide_border=true" />
+</p>
+
+<p align="left">
+  <img alt="Contribution activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=bibutikoley&theme=github-compact&hide_border=true" />
+</p>
+
+## 📫 Reach Me
+
+[![Website](https://img.shields.io/badge/Website-bibutikoley.github.io-181717?style=flat-square&logo=github&logoColor=white)](https://bibutikoley.github.io/)
+[![Twitter](https://img.shields.io/badge/Twitter-@iambibuti-1DA1F2?style=flat-square&logo=x&logoColor=white)](https://twitter.com/iambibuti)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-bibutikoley-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bibutikoley/)
+[![Email](https://img.shields.io/badge/Email-bibutikoley@outlook.com-EA4335?style=flat-square&logo=maildotru&logoColor=white)](mailto:bibutikoley@outlook.com)
+
+---
+
+<sub>Let's work collaboratively and make the best use of technology. 🚀</sub>
