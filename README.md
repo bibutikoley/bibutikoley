@@ -36,11 +36,35 @@ modern UI with Jetpack Compose, and secure, maintainable code.
 ![Gradle](https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=gradle&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 
+## 🚧 Currently Building
+
+- **Android apps** with Jetpack Compose — modern declarative UI, clean architecture, and testable layers
+- **Kotlin Multiplatform** — sharing domain and data logic across Android and iOS
+- **Cross-platform exploration** — picking up Flutter and native iOS development to round out the mobile stack
+
+## 🎯 What I Focus On
+
+| Area | What that means in practice |
+| --- | --- |
+| **Architecture** | MVVM / MVI, clear module boundaries, dependency injection, code that survives feature growth |
+| **Modern Android UI** | Jetpack Compose, Material 3, state hoisting, unidirectional data flow |
+| **Kotlin Multiplatform** | Shared business logic, `expect`/`actual` boundaries, platform-idiomatic UI on top |
+| **Data Security** | Secure storage, safe key handling, sensible auth and network hardening |
+| **Backend-as-a-service** | Firebase — Auth, Firestore, Cloud Messaging, Crashlytics |
+
 ## 📈 GitHub Stats
 
 <p align="left">
   <img height="165" alt="Bibuti's GitHub stats" src="https://github-readme-stats.vercel.app/api?username=bibutikoley&show_icons=true&theme=blue-green&hide_border=true" />
   <img height="165" alt="Top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=bibutikoley&layout=compact&theme=blue-green&hide_border=true" />
+</p>
+
+<p align="left">
+  <img height="165" alt="Contribution streak" src="https://streak-stats.demolab.com?user=bibutikoley&theme=blue-green&hide_border=true" />
+</p>
+
+<p align="left">
+  <img alt="Contribution activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=bibutikoley&theme=github-compact&hide_border=true" />
 </p>
 
 ## 📫 Reach Me
