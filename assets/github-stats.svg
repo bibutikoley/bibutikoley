@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="296" viewBox="0 0 460 296" role="img" aria-label="Bibuti Koley's GitHub statistics">
+<title>Bibuti Koley's GitHub statistics</title>
+<style>
+    :root {
+      --bg: #ffffff; --border: #d0d7de; --title: #0969da;
+      --text: #1f2328; --muted: #656d76; --track: #eaeef2;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0d1117; --border: #30363d; --title: #58a6ff;
+        --text: #e6edf3; --muted: #8b949e; --track: #21262d;
+      }
+    }
+    .card { fill: var(--bg); stroke: var(--border); }
+    .title { font: 600 16px 'Segoe UI', Ubuntu, Sans-Serif; fill: var(--title); }
+    .label { font: 400 13px 'Segoe UI', Ubuntu, Sans-Serif; fill: var(--text); }
+    .value { font: 600 13px 'Segoe UI', Ubuntu, Sans-Serif; fill: var(--text); }
+    .muted { font: 400 10px 'Segoe UI', Ubuntu, Sans-Serif; fill: var(--muted); }
+</style>
+<rect class="card" x="0.5" y="0.5" rx="6" width="459" height="295"/>
+<text class="title" x="25" y="35">Bibuti Koley's GitHub Stats</text>
+<text class="muted" x="25" y="53">112 contributions in the last year</text>
+<text class="label" x="25" y="74">Total Stars Earned</text>
+<text class="value" x="435" y="74" text-anchor="end">4</text>
+<text class="label" x="25" y="100">Total Commits (past year)</text>
+<text class="value" x="435" y="100" text-anchor="end">8</text>
+<text class="label" x="25" y="126">Total Pull Requests</text>
+<text class="value" x="435" y="126" text-anchor="end">0</text>
+<text class="label" x="25" y="152">Total Issues</text>
+<text class="value" x="435" y="152" text-anchor="end">0</text>
+<text class="label" x="25" y="178">Code Reviews</text>
+<text class="value" x="435" y="178" text-anchor="end">0</text>
+<text class="label" x="25" y="204">Public Repositories</text>
+<text class="value" x="435" y="204" text-anchor="end">19</text>
+<text class="label" x="25" y="230">Followers</text>
+<text class="value" x="435" y="230" text-anchor="end">8</text>
+<text class="label" x="25" y="256">Current Streak</text>
+<text class="value" x="435" y="256" text-anchor="end">1 days</text>
+</svg>
