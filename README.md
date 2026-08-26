@@ -46,7 +46,14 @@ modern UI with Jetpack Compose, and secure, maintainable code.
 
 <!-- PROJECTS:START -->
 
-_Populated automatically from public repositories._
+| Project | What it is | Stack |
+| --- | --- | --- |
+| [bibutikoley](https://github.com/bibutikoley/bibutikoley) | Bibuti's Portfolio | — |
+| [voice-transcription](https://github.com/bibutikoley/voice-transcription) | _No description yet_ | **Python** |
+| [Livekit-VoiceBackend](https://github.com/bibutikoley/Livekit-VoiceBackend) | _No description yet_ | **Python** |
+| [Livekit-VoiceiOS](https://github.com/bibutikoley/Livekit-VoiceiOS) | _No description yet_ | **Swift** |
+| [auris-server](https://github.com/bibutikoley/auris-server) | _No description yet_ | **Python** |
+| [NetworkConfig](https://github.com/bibutikoley/NetworkConfig) | This is a Kotlin Multiplatform App, It check for network connection in realtime | **Kotlin** |
 
 <!-- PROJECTS:END -->
 
