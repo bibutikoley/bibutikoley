@@ -19,7 +19,7 @@ permissions:
 
 concurrency:
   group: profile-stats-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   generate:
@@ -34,12 +34,10 @@ jobs:
           # token is used and the cards reflect public activity only.
           GITHUB_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
-          mkdir -p data
           python3 scripts/generate_stats.py \
             --login "${{ github.repository_owner }}" \
             --out assets \
-            --readme README.md \
-            --dump-json data/profile.json
+            --readme README.md
 
       - name: Commit updated cards
         run: |
