@@ -42,6 +42,14 @@ modern UI with Jetpack Compose, and secure, maintainable code.
 - **Kotlin Multiplatform** — sharing domain and data logic across Android and iOS
 - **Cross-platform exploration** — picking up Flutter and native iOS development to round out the mobile stack
 
+## 🛠️ Featured Projects
+
+<!-- PROJECTS:START -->
+
+_Populated automatically from public repositories._
+
+<!-- PROJECTS:END -->
+
 ## 🎯 What I Focus On
 
 | Area | What that means in practice |

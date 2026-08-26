@@ -30,11 +30,21 @@ query($login: String!, $cursor: String) {
     login
     followers { totalCount }
     repositories(first: 100, after: $cursor, ownerAffiliations: OWNER,
-                 isFork: false, orderBy: {field: STARGAZERS, direction: DESC}) {
+                 isFork: false, privacy: PUBLIC,
+                 orderBy: {field: STARGAZERS, direction: DESC}) {
       totalCount
       pageInfo { hasNextPage endCursor }
       nodes {
+        name
+        description
+        url
+        homepageUrl
         stargazerCount
+        forkCount
+        pushedAt
+        isArchived
+        primaryLanguage { name color }
+        repositoryTopics(first: 6) { nodes { topic { name } } }
         languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
           edges { size node { name color } }
         }
@@ -129,6 +139,7 @@ def summarize(user: dict) -> dict:
         "languages": [(n, s, colors[n]) for n, s in languages],
         "weeks": calendar["weeks"],
         "days": days,
+        "repos": repos,
     }
 
 
@@ -296,6 +307,46 @@ def write(path: str, lines: list[str]) -> None:
     print(f"wrote {path}", file=sys.stderr)
 
 
+# --------------------------------------------------------------------------- projects
+
+PROJECTS_START = "<!-- PROJECTS:START -->"
+PROJECTS_END = "<!-- PROJECTS:END -->"
+
+
+def pick_projects(repos: list[dict], limit: int = 6) -> list[dict]:
+    """Most recently pushed public, non-archived, non-fork repositories."""
+    live = [r for r in repos if not r.get("isArchived")]
+    live.sort(key=lambda r: r.get("pushedAt") or "", reverse=True)
+    return live[:limit]
+
+
+def render_projects(repos: list[dict], readme: str = "README.md") -> None:
+    """Rewrite the project table between the PROJECTS markers in the README."""
+    with open(readme, encoding="utf-8") as fh:
+        content = fh.read()
+    if PROJECTS_START not in content or PROJECTS_END not in content:
+        print(f"{readme}: project markers missing, skipping", file=sys.stderr)
+        return
+
+    rows = ["| Project | What it is | Stack |", "| --- | --- | --- |"]
+    for repo in pick_projects(repos):
+        name = repo["name"]
+        desc = (repo.get("description") or "").strip() or "_No description yet_"
+        lang = (repo.get("primaryLanguage") or {}).get("name") or ""
+        topics = [t["topic"]["name"] for t in repo.get("repositoryTopics", {}).get("nodes", [])]
+        stack = " · ".join(filter(None, [f"**{lang}**" if lang else "", ", ".join(topics[:3])]))
+        stars = repo.get("stargazerCount", 0)
+        title = f"[{name}]({repo['url']})" + (f" ⭐ {stars}" if stars else "")
+        rows.append(f"| {title} | {desc} | {stack or '—'} |")
+
+    block = f"{PROJECTS_START}\n\n" + "\n".join(rows) + f"\n\n{PROJECTS_END}"
+    start = content.index(PROJECTS_START)
+    end = content.index(PROJECTS_END) + len(PROJECTS_END)
+    with open(readme, "w", encoding="utf-8") as fh:
+        fh.write(content[:start] + block + content[end:])
+    print(f"updated project table in {readme}", file=sys.stderr)
+
+
 # --------------------------------------------------------------------------- main
 
 
@@ -305,6 +356,7 @@ def main() -> int:
     ap.add_argument("--out", default="assets")
     ap.add_argument("--fixture", help="render from a saved API response instead of fetching")
     ap.add_argument("--dump-json", help="save the raw API response here")
+    ap.add_argument("--readme", help="README to refresh the project table in")
     args = ap.parse_args()
 
     if args.fixture:
@@ -330,6 +382,8 @@ def main() -> int:
     render_stats(s, os.path.join(args.out, "github-stats.svg"))
     render_languages(s, os.path.join(args.out, "top-languages.svg"))
     render_activity(s, os.path.join(args.out, "activity.svg"))
+    if args.readme:
+        render_projects(s["repos"], args.readme)
     return 0
 
 
