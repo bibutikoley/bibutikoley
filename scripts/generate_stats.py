@@ -313,11 +313,40 @@ PROJECTS_START = "<!-- PROJECTS:START -->"
 PROJECTS_END = "<!-- PROJECTS:END -->"
 
 
-def pick_projects(repos: list[dict], limit: int = 6) -> list[dict]:
-    """Most recently pushed public, non-archived, non-fork repositories."""
-    live = [r for r in repos if not r.get("isArchived")]
+def load_overrides(path: str = "data/projects.json") -> dict:
+    """Curated blurbs and pin order, since most repositories carry no description."""
+    try:
+        with open(path, encoding="utf-8") as fh:
+            raw = json.load(fh)
+    except FileNotFoundError:
+        return {"featured": [], "descriptions": {}, "exclude": []}
+    return {
+        "featured": raw.get("featured", []),
+        # Repository names are matched case-insensitively.
+        "descriptions": {k.lower(): v for k, v in raw.get("descriptions", {}).items()},
+        "exclude": [name.lower() for name in raw.get("exclude", [])],
+    }
+
+
+def pick_projects(repos: list[dict], overrides: dict, limit: int = 6) -> list[dict]:
+    """Pinned repositories first, then the most recently pushed ones."""
+    excluded = set(overrides["exclude"])
+    live = [r for r in repos if not r.get("isArchived") and r["name"].lower() not in excluded]
     live.sort(key=lambda r: r.get("pushedAt") or "", reverse=True)
-    return live[:limit]
+
+    by_name = {r["name"].lower(): r for r in live}
+    picked, seen = [], set()
+    for name in overrides["featured"]:
+        repo = by_name.get(name.lower())
+        if repo:
+            picked.append(repo)
+            seen.add(repo["name"].lower())
+    for repo in live:
+        if len(picked) >= limit:
+            break
+        if repo["name"].lower() not in seen:
+            picked.append(repo)
+    return picked[:limit]
 
 
 def render_projects(repos: list[dict], readme: str = "README.md") -> None:
@@ -328,10 +357,15 @@ def render_projects(repos: list[dict], readme: str = "README.md") -> None:
         print(f"{readme}: project markers missing, skipping", file=sys.stderr)
         return
 
+    overrides = load_overrides()
     rows = ["| Project | What it is | Stack |", "| --- | --- | --- |"]
-    for repo in pick_projects(repos):
+    for repo in pick_projects(repos, overrides):
         name = repo["name"]
-        desc = (repo.get("description") or "").strip() or "_No description yet_"
+        desc = (
+            overrides["descriptions"].get(name.lower())
+            or (repo.get("description") or "").strip()
+            or "_No description yet_"
+        )
         lang = (repo.get("primaryLanguage") or {}).get("name") or ""
         topics = [t["topic"]["name"] for t in repo.get("repositoryTopics", {}).get("nodes", [])]
         stack = " · ".join(filter(None, [f"**{lang}**" if lang else "", ", ".join(topics[:3])]))
