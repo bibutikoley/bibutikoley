@@ -15,12 +15,12 @@ sensitive conversations private.
 
 | Project | What it is | Stack |
 | --- | --- | --- |
-| [Livekit-VoiceBackend](https://github.com/bibutikoley/Livekit-VoiceBackend) | Local-first voice backend: FastAPI + a LiveKit agent worker running cascaded STT → LLM → TTS on-device, with a safety layer between understanding and speaking | **Python** |
-| [Livekit-VoiceiOS](https://github.com/bibutikoley/Livekit-VoiceiOS) | SwiftUI chat app with voice mode inside the thread — live captions, AI disclosure, explicit GDPR Art 9 consent, and no model-provider secrets on the device | **Swift** |
 | [voice-transcription](https://github.com/bibutikoley/voice-transcription) | Live microphone transcription in the terminal, with five swappable ASR backends and vocabulary biasing for clinical speech | **Python** |
 | [auris-server](https://github.com/bibutikoley/auris-server) | Neural text-to-speech server built on Kokoro-82M, with a normalization pipeline that reads medical notation aloud correctly (BID → "twice a day") | **Python** |
 | [NetworkConfig](https://github.com/bibutikoley/NetworkConfig) | Kotlin Multiplatform library for observing network connectivity in real time across Android and iOS | **Kotlin** |
+| [LiveKit-VoiceAgent](https://github.com/bibutikoley/LiveKit-VoiceAgent) | _No description yet_ | **Python** |
 | [bingo](https://github.com/bibutikoley/bingo) | This is a bingo game for android TV | **Kotlin** |
+| [nextcloud](https://github.com/bibutikoley/nextcloud) | _No description yet_ | **Shell** |
 
 <!-- PROJECTS:END -->
 
