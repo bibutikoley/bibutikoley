@@ -35,6 +35,6 @@
 <text class="label" x="25" y="230">Followers</text>
 <text class="value" x="435" y="230" text-anchor="end">8</text>
 <text class="label" x="25" y="256">Current Streak</text>
-<text class="value" x="435" y="256" text-anchor="end">2 days</text>
+<text class="value" x="435" y="256" text-anchor="end">0 days</text>
 <text class="muted" x="25" y="288">Per-type counts cover public contributions only</text>
 </svg>
