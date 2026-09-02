@@ -19,8 +19,8 @@ sensitive conversations private.
 | [auris-server](https://github.com/bibutikoley/auris-server) | Neural text-to-speech server built on Kokoro-82M, with a normalization pipeline that reads medical notation aloud correctly (BID → "twice a day") | **Python** |
 | [NetworkConfig](https://github.com/bibutikoley/NetworkConfig) | Kotlin Multiplatform library for observing network connectivity in real time across Android and iOS | **Kotlin** |
 | [Nad](https://github.com/bibutikoley/Nad) | Real-time voice agents you run on your own infrastructure. WebRTC, low latency, no managed platform. | **Python** |
-| [bingo](https://github.com/bibutikoley/bingo) | This is a bingo game for android TV | **Kotlin** |
 | [nextcloud](https://github.com/bibutikoley/nextcloud) | _No description yet_ | **Shell** |
+| [streamlit_langchain_chat](https://github.com/bibutikoley/streamlit_langchain_chat) | _No description yet_ | **Python** |
 
 <!-- PROJECTS:END -->
 
