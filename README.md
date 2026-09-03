@@ -18,9 +18,9 @@ sensitive conversations private.
 | [voice-transcription](https://github.com/bibutikoley/voice-transcription) | Live microphone transcription in the terminal, with five swappable ASR backends and vocabulary biasing for clinical speech | **Python** |
 | [auris-server](https://github.com/bibutikoley/auris-server) | Neural text-to-speech server built on Kokoro-82M, with a normalization pipeline that reads medical notation aloud correctly (BID → "twice a day") | **Python** |
 | [NetworkConfig](https://github.com/bibutikoley/NetworkConfig) | Kotlin Multiplatform library for observing network connectivity in real time across Android and iOS | **Kotlin** |
+| [ai-sdlc](https://github.com/bibutikoley/ai-sdlc) | _No description yet_ | **Python** |
+| [jetengine](https://github.com/bibutikoley/jetengine) | _No description yet_ | **JavaScript** |
 | [Nad](https://github.com/bibutikoley/Nad) | Real-time voice agents you run on your own infrastructure. WebRTC, low latency, no managed platform. | **Python** |
-| [nextcloud](https://github.com/bibutikoley/nextcloud) | _No description yet_ | **Shell** |
-| [streamlit_langchain_chat](https://github.com/bibutikoley/streamlit_langchain_chat) | _No description yet_ | **Python** |
 
 <!-- PROJECTS:END -->
 
