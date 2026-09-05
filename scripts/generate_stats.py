@@ -673,10 +673,11 @@ def render_hero(s: dict, now_item: dict, path: str, now: dt.datetime | None = No
     )
 
     out.append(f'<text class="name" x="{x0}" y="64">{escape(s["name"])}</text>')
-    role = (about or {}).get("headline") or "Developer building with AI"
-    if (about or {}).get("role"):
-        role = f"{role} · {about['role']}"
-    out.append(f'<text class="role" x="{x0}" y="92">{escape(role[:70])}</text>')
+    # Headline plus role when they fit on one line, otherwise just the role.
+    headline = (about or {}).get("headline") or "Developer building with AI"
+    role = (about or {}).get("role") or ""
+    line = f"{headline} · {role}" if role and len(f"{headline} · {role}") <= 72 else (role or headline)
+    out.append(f'<text class="role" x="{x0}" y="92">{escape(line[:72])}</text>')
     out.append(
         f'<circle class="dot" cx="{x0 + 5}" cy="119" r="4">'
         '<animate attributeName="opacity" values="1;0.35;1" dur="1.6s" repeatCount="indefinite"/></circle>'

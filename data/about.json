@@ -1,9 +1,9 @@
 {
   "_comment": "Curated profile copy. Edit this file to change how the site and README describe you; the daily Action re-renders both. Dates are YYYY-MM. Keep 'highlights' to real, verifiable items.",
-  "headline": "Developer building with AI",
-  "role": "Mobile & AI engineer · WebMD · Mumbai",
-  "tagline": "I ship Android and iOS apps, AI-native developer tooling, and local-first voice systems, and I rebuild my stack whenever something better lands.",
-  "summary": "Most of my time now goes to the edge of what AI makes possible: agent-driven software lifecycles, MCP servers, LLM-powered apps, and speech pipelines that run on the device instead of in someone else's cloud. The mobile craft underneath is years of Android and, lately, iOS.",
+  "headline": "Building agentic AI and mobile apps",
+  "role": "Team Lead, Medscape AI & Professional Apps · WebMD · Navi Mumbai",
+  "tagline": "I lead the Medscape AI and professional apps team at WebMD, ship Android and iOS apps, build agentic AI and developer tooling, and rebuild my stack whenever something better lands.",
+  "summary": "Most of my time now goes to the edge of what AI makes possible: agent-driven software lifecycles, MCP servers, LLM-powered apps, and speech pipelines that run on the device instead of in someone else's cloud. Underneath is nine years of Android, from a first developer job in 2017 to leading a team at WebMD, and lately iOS.",
   "focus": [
     {
       "title": "AI-native development",
@@ -22,6 +22,71 @@
       "blurb": "Three.js simulators, real-time WebRTC agents, FastAPI services and self-hosted models. If it shipped this year, there is probably a repo here trying it."
     }
   ],
-  "experience": [],
-  "highlights": []
+  "experience": [
+    {
+      "role": "Team Lead, Medscape AI & Professional Apps",
+      "company": "WebMD",
+      "period": "Oct 2025 – present",
+      "location": "Navi Mumbai",
+      "detail": "Leading the team behind Medscape's AI features and professional apps: agentic AI for clinicians alongside the Android and iOS apps, built with Kotlin Flow and Jetpack Compose."
+    },
+    {
+      "role": "Senior Software Engineer",
+      "company": "WebMD",
+      "period": "Oct 2022 – Oct 2025",
+      "location": "Navi Mumbai",
+      "detail": "Android engineering with Kotlin Flow and Compose across WebMD's consumer apps."
+    },
+    {
+      "role": "Senior Software Developer",
+      "company": "OSP",
+      "period": "Nov 2020 – Oct 2022",
+      "location": "Mumbai",
+      "detail": "Mobile product development with user-centered design in agile teams."
+    },
+    {
+      "role": "Software Developer",
+      "company": "OSP",
+      "period": "May 2019 – Nov 2020",
+      "location": "Mumbai",
+      "detail": "Android development, user-centered design, agile delivery."
+    },
+    {
+      "role": "Android Developer",
+      "company": "GS Tecknoserve Pvt. Ltd.",
+      "period": "Aug 2017 – May 2019",
+      "location": "",
+      "detail": "First Android role: building and shipping native apps end to end."
+    }
+  ],
+  "highlights": [
+    {
+      "date": "2025-10",
+      "title": "Promoted to Team Lead, Medscape AI & Professional Apps",
+      "org": "WebMD",
+      "detail": "Took over the Medscape AI and professional apps team after three years as a senior engineer.",
+      "url": "https://www.linkedin.com/in/bibutikoley/"
+    },
+    {
+      "date": "2022-10",
+      "title": "Joined WebMD as Senior Software Engineer",
+      "org": "WebMD",
+      "detail": "Moved to one of the largest health information platforms to work on its Android apps.",
+      "url": "https://www.linkedin.com/in/bibutikoley/"
+    },
+    {
+      "date": "2020-11",
+      "title": "Promoted to Senior Software Developer",
+      "org": "OSP",
+      "detail": "Eighteen months after joining as a developer.",
+      "url": "https://www.linkedin.com/in/bibutikoley/"
+    },
+    {
+      "date": "2017-08",
+      "title": "Started as an Android Developer",
+      "org": "GS Tecknoserve",
+      "detail": "The beginning of nine years of shipping mobile apps.",
+      "url": "https://www.linkedin.com/in/bibutikoley/"
+    }
+  ]
 }

@@ -70,7 +70,7 @@ export function renderAbout(data) {
           'li',
           { class: 'roles__item' },
           h('div', { class: 'roles__title' }, job.role, job.company ? h('span', { class: 'roles__org' }, ` · ${job.company}`) : null),
-          job.period ? h('div', { class: 'roles__period' }, job.period) : null,
+          job.period ? h('div', { class: 'roles__period' }, job.location ? `${job.period} · ${job.location}` : job.period) : null,
           job.detail ? h('p', { class: 'roles__detail' }, job.detail) : null,
         ),
       );

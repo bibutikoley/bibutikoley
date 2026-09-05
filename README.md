@@ -6,9 +6,9 @@
 
 <!-- ABOUT:START -->
 
-**Developer building with AI.** I ship Android and iOS apps, AI-native developer tooling, and local-first voice systems, and I rebuild my stack whenever something better lands.
+**Building agentic AI and mobile apps.** I lead the Medscape AI and professional apps team at WebMD, ship Android and iOS apps, build agentic AI and developer tooling, and rebuild my stack whenever something better lands.
 
-Most of my time now goes to the edge of what AI makes possible: agent-driven software lifecycles, MCP servers, LLM-powered apps, and speech pipelines that run on the device instead of in someone else's cloud. The mobile craft underneath is years of Android and, lately, iOS.
+Most of my time now goes to the edge of what AI makes possible: agent-driven software lifecycles, MCP servers, LLM-powered apps, and speech pipelines that run on the device instead of in someone else's cloud. Underneath is nine years of Android, from a first developer job in 2017 to leading a team at WebMD, and lately iOS.
 
 <!-- ABOUT:END -->
 
@@ -16,7 +16,10 @@ Most of my time now goes to the edge of what AI makes possible: agent-driven sof
 
 <!-- HIGHLIGHTS:START -->
 
-_Milestones will appear here once `data/about.json` lists them._
+- **2025-10** · WebMD: [Promoted to Team Lead, Medscape AI & Professional Apps](https://www.linkedin.com/in/bibutikoley/) — Took over the Medscape AI and professional apps team after three years as a senior engineer.
+- **2022-10** · WebMD: [Joined WebMD as Senior Software Engineer](https://www.linkedin.com/in/bibutikoley/) — Moved to one of the largest health information platforms to work on its Android apps.
+- **2020-11** · OSP: [Promoted to Senior Software Developer](https://www.linkedin.com/in/bibutikoley/) — Eighteen months after joining as a developer.
+- **2017-08** · GS Tecknoserve: [Started as an Android Developer](https://www.linkedin.com/in/bibutikoley/) — The beginning of nine years of shipping mobile apps.
 
 <!-- HIGHLIGHTS:END -->
 
