@@ -22,11 +22,11 @@
 <rect x="25" y="48" rx="5" width="410" height="10" fill="var(--track)"/>
 <clipPath id="bar"><rect x="25" y="48" rx="5" width="410" height="10"/></clipPath>
 <g clip-path="url(#bar)">
-<rect x="25.00" y="48" width="135.60" height="10" fill="#3572A5"/>
-<rect x="160.60" y="48" width="115.29" height="10" fill="#f1e05a"/>
-<rect x="275.89" y="48" width="71.10" height="10" fill="#b07219"/>
-<rect x="346.99" y="48" width="43.95" height="10" fill="#F05138"/>
-<rect x="390.94" y="48" width="28.40" height="10" fill="#89e051"/>
+<rect x="25.00" y="48" width="135.63" height="10" fill="#3572A5"/>
+<rect x="160.63" y="48" width="115.29" height="10" fill="#f1e05a"/>
+<rect x="275.92" y="48" width="71.09" height="10" fill="#b07219"/>
+<rect x="347.00" y="48" width="43.94" height="10" fill="#F05138"/>
+<rect x="390.95" y="48" width="28.40" height="10" fill="#89e051"/>
 <rect x="419.34" y="48" width="15.66" height="10" fill="#663399"/>
 </g>
 <circle cx="30" cy="80" r="5" fill="#3572A5"/>
