@@ -67,6 +67,31 @@ function watchSections() {
   panels.forEach((p) => io.observe(p));
 }
 
+/**
+ * In-page links scroll without writing a hash into the URL, so a reload never
+ * jumps back into the middle of the page. Direct deep links (/#work) still
+ * work because the browser handles them before this runs.
+ */
+function watchAnchors() {
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (!location.hash) window.scrollTo(0, 0);
+
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href^="#"]');
+    if (!link || e.defaultPrevented || e.metaKey || e.ctrlKey) return;
+    const target = document.getElementById(link.getAttribute('href').slice(1));
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+    if (link.classList.contains('skip')) {
+      target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+    }
+  });
+}
+
 async function startScene(data, shown) {
   const canvas = document.getElementById('scene');
   try {
@@ -87,6 +112,7 @@ async function boot() {
   // 1. Paint immediately from the bundled snapshot.
   let data = baseline;
   let shown = renderAll(data, { source: 'snapshot' });
+  watchAnchors();
   watchReveals();
   watchSections();
 
