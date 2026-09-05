@@ -93,9 +93,13 @@
 
       <section id="live" class="panel" data-scene="live" aria-labelledby="live-title" hidden>
         <div class="panel__inner">
-          <h2 id="live-title" class="h2 reveal" style="--i: 0">Live on the web</h2>
+          <div class="section-head reveal" style="--i: 0">
+            <h2 id="live-title" class="h2">Live on the web</h2>
+            <span id="live-count" class="section-head__count"></span>
+          </div>
           <p class="sub reveal" style="--i: 1">
             Projects with a running deployment. These previews are the real pages; open one to use it.
+            Anything I deploy to GitHub Pages shows up here automatically.
           </p>
           <div id="demos" class="demos reveal" style="--i: 2"></div>
         </div>
