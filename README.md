@@ -1,12 +1,26 @@
-<a href="https://bibutikoley.github.io"><img src="assets/hero.svg" width="900" alt="Bibuti Koley — mobile engineer building local-first voice AI. An animated waveform of this year's GitHub contributions with a live line about what I'm doing right now. Click to open the interactive 3D portfolio." /></a>
+<a href="https://bibutikoley.github.io"><img src="assets/hero.svg" width="900" alt="Bibuti Koley — developer building with AI: mobile, AI-native tooling, local-first voice. An animated waveform of this year's GitHub contributions with a live line about what I'm doing right now. Click to open the interactive 3D portfolio." /></a>
 
 <p>
   <b>▶ <a href="https://bibutikoley.github.io">bibutikoley.github.io</a></b> — an interactive Three.js view of what I'm building right now, fed live by the GitHub API. This card and that page are regenerated every day.
 </p>
 
-**Mobile engineer building local-first voice AI.** Android, Kotlin Multiplatform, and lately SwiftUI —
-and voice interfaces that run **on the device instead of in someone else's cloud**: speech recognition,
-language models, and text-to-speech stitched into pipelines that keep sensitive conversations private.
+<!-- ABOUT:START -->
+
+**Developer building with AI.** I ship Android and iOS apps, AI-native developer tooling, and local-first voice systems, and I rebuild my stack whenever something better lands.
+
+Most of my time now goes to the edge of what AI makes possible: agent-driven software lifecycles, MCP servers, LLM-powered apps, and speech pipelines that run on the device instead of in someone else's cloud. The mobile craft underneath is years of Android and, lately, iOS.
+
+<!-- ABOUT:END -->
+
+## 🏆 Highlights
+
+<!-- HIGHLIGHTS:START -->
+
+_Milestones will appear here once `data/about.json` lists them._
+
+<!-- HIGHLIGHTS:END -->
+
+<sub>Curated in <a href="data/about.json"><code>data/about.json</code></a>; the same file drives the portfolio's hero and Highlights section.</sub>
 
 ---
 
@@ -32,12 +46,18 @@ language models, and text-to-speech stitched into pipelines that keep sensitive 
 
 | Area | In practice |
 | --- | --- |
-| **On-device speech** | Streaming STT with voice activity detection, neural TTS, and vocabulary biasing for domain terms — Parakeet, Whisper, Qwen3-ASR, Kokoro |
-| **Voice agent architecture** | Cascaded STT → LLM → TTS over WebRTC with LiveKit, one shared agent core serving both text and voice |
-| **Privacy by construction** | Local models, no provider secrets on the device, short-lived scoped tokens, explicit consent before a microphone opens |
-| **Mobile** | Jetpack Compose and SwiftUI, Kotlin Multiplatform for shared domain logic, clean architecture that survives feature growth |
+| **AI-native development** | Agent-driven SDLC experiments, MCP servers, LLM chat and agent apps — Claude, Gemini, Qwen and local models as everyday tools |
+| **Mobile, end to end** | Jetpack Compose and SwiftUI, Kotlin Multiplatform for shared domain logic, Flutter when it fits, clean architecture that survives feature growth |
+| **Voice & on-device AI** | Streaming STT → LLM → TTS over WebRTC with LiveKit; Parakeet, Whisper, Qwen3-ASR, Kokoro; local models, no provider secrets on the device |
+| **Latest tech, hands-on** | Three.js simulators, real-time WebRTC agents, FastAPI services, self-hosted models |
 
 ## 🧰 Stack
+
+![Claude](https://img.shields.io/badge/Claude-D97757?style=flat-square&logo=anthropic&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=flat-square&logo=googlegemini&logoColor=white)
+![MCP](https://img.shields.io/badge/MCP-000000?style=flat-square&logo=modelcontextprotocol&logoColor=white)
+![Three.js](https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=threedotjs&logoColor=white)
+![WebRTC](https://img.shields.io/badge/WebRTC-333333?style=flat-square&logo=webrtc&logoColor=white)
 
 ![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
 ![Swift](https://img.shields.io/badge/Swift-F05138?style=flat-square&logo=swift&logoColor=white)

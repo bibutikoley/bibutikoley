@@ -867,3 +867,137 @@
     gap: 8px 22px;
   }
 }
+
+/* About / highlights */
+.headline {
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  margin: -10px 0 18px;
+}
+
+.focus {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.focus__item {
+  padding: 20px 20px 18px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color 0.3s, transform 0.4s var(--ease);
+}
+
+.focus__item:hover {
+  border-color: var(--border-hot);
+  transform: translateY(-3px);
+}
+
+.focus__index {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--accent);
+}
+
+.focus__title {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 8px 0 6px;
+  letter-spacing: -0.01em;
+}
+
+.focus__blurb {
+  color: var(--muted);
+  font-size: 14.5px;
+}
+
+.milestones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+.milestones__h {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 12px;
+}
+
+.timeline {
+  display: grid;
+  gap: 14px;
+  border-left: 1px solid var(--border);
+  padding-left: 18px;
+}
+
+.timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 82px 1fr;
+  gap: 12px;
+}
+
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  left: -22px;
+  top: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.6);
+}
+
+.timeline__when {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--faint);
+  padding-top: 3px;
+}
+
+.timeline__title {
+  font-weight: 550;
+}
+
+.timeline__org,
+.roles__org {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.timeline__detail,
+.roles__detail {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.roles {
+  display: grid;
+  gap: 14px;
+}
+
+.roles__item {
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.roles__title {
+  font-weight: 550;
+}
+
+.roles__period {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--faint);
+  margin-top: 2px;
+}

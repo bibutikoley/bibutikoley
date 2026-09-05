@@ -1,9 +1,10 @@
 import { h, clear, $ } from '../util/dom.js';
 
 const GROUPS = [
+  ['AI & agents', ['Claude', 'Gemini', 'Qwen', 'Ollama', 'MCP', 'LangChain', 'Agent-driven SDLC']],
   ['Mobile', ['Kotlin', 'Swift', 'Jetpack Compose', 'SwiftUI', 'Kotlin Multiplatform', 'Flutter']],
   ['Voice & AI', ['Whisper', 'Parakeet', 'Qwen3-ASR', 'Kokoro', 'LiveKit', 'WebRTC', 'Ollama', 'ONNX', 'PyTorch']],
-  ['Backend & tools', ['Python', 'FastAPI', 'Docker', 'Firebase', 'Gradle', 'Git']],
+  ['Web, backend & tools', ['Three.js', 'Vite', 'Python', 'FastAPI', 'Node.js', 'Docker', 'Firebase', 'Gradle']],
 ];
 
 export function renderStack(data) {

@@ -1,0 +1,27 @@
+{
+  "_comment": "Curated profile copy. Edit this file to change how the site and README describe you; the daily Action re-renders both. Dates are YYYY-MM. Keep 'highlights' to real, verifiable items.",
+  "headline": "Developer building with AI",
+  "role": "Mobile & AI engineer · WebMD · Mumbai",
+  "tagline": "I ship Android and iOS apps, AI-native developer tooling, and local-first voice systems, and I rebuild my stack whenever something better lands.",
+  "summary": "Most of my time now goes to the edge of what AI makes possible: agent-driven software lifecycles, MCP servers, LLM-powered apps, and speech pipelines that run on the device instead of in someone else's cloud. The mobile craft underneath is years of Android and, lately, iOS.",
+  "focus": [
+    {
+      "title": "AI-native development",
+      "blurb": "Agent-driven SDLC experiments, MCP servers, LLM chat and agent apps. Claude, Gemini, Qwen and local models are part of the daily toolchain, not a demo."
+    },
+    {
+      "title": "Mobile, end to end",
+      "blurb": "Android with Jetpack Compose, iOS with SwiftUI, shared logic with Kotlin Multiplatform, Flutter when it fits. Clean architecture that survives feature growth."
+    },
+    {
+      "title": "Voice & on-device AI",
+      "blurb": "Streaming speech recognition, language models and neural text-to-speech stitched into private, low-latency pipelines: Whisper, Parakeet, Kokoro, LiveKit, WebRTC."
+    },
+    {
+      "title": "Latest tech, hands-on",
+      "blurb": "Three.js simulators, real-time WebRTC agents, FastAPI services and self-hosted models. If it shipped this year, there is probably a repo here trying it."
+    }
+  ],
+  "experience": [],
+  "highlights": []
+}

@@ -5,6 +5,7 @@ import './styles/components.css';
 
 import { baseline, freshSnapshot, loadLive, merge } from './data/api.js';
 import { renderHero } from './ui/hero.js';
+import { renderAbout } from './ui/about.js';
 import { renderNow } from './ui/now.js';
 import { renderWork } from './ui/work.js';
 import { renderLive } from './ui/live.js';
@@ -16,6 +17,7 @@ import { mountFallback } from './ui/fallback.js';
 let scene = null;
 
 function renderAll(data, sync) {
+  renderAbout(data);
   renderHero(data, sync);
   renderNow(data, sync);
   const shown = renderWork(data);

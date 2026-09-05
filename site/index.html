@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Bibuti Koley — local-first voice AI, mobile engineer</title>
-    <meta name="description" content="Bibuti Koley builds mobile apps and on-device voice AI: speech recognition, language models and text-to-speech that keep conversations private. A live view of what he is working on right now." />
+    <title>Bibuti Koley — developer building with AI</title>
+    <meta name="description" content="Bibuti Koley is a mobile and AI engineer in Mumbai: Android, iOS and Kotlin Multiplatform apps, AI-native developer tooling with Claude and MCP, and local-first voice systems. A live view of what he is building right now." />
     <meta name="theme-color" content="#05070d" />
     <meta name="color-scheme" content="dark" />
     <link rel="canonical" href="https://bibutikoley.github.io/" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Bibuti Koley — local-first voice AI" />
-    <meta property="og:description" content="Mobile engineer building on-device speech pipelines. Live from GitHub: what I'm working on right now." />
+    <meta property="og:title" content="Bibuti Koley — developer building with AI" />
+    <meta property="og:description" content="Mobile & AI engineer. Android, iOS, AI-native tooling, local-first voice. Live from GitHub: what I'm building right now." />
     <meta property="og:url" content="https://bibutikoley.github.io/" />
     <meta property="og:image" content="https://bibutikoley.github.io/og.png" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -22,7 +22,10 @@
         "@type": "Person",
         "name": "Bibuti Koley",
         "url": "https://bibutikoley.github.io/",
-        "jobTitle": "Mobile engineer",
+        "jobTitle": "Mobile & AI engineer",
+        "worksFor": { "@type": "Organization", "name": "WebMD" },
+        "address": { "@type": "PostalAddress", "addressLocality": "Mumbai", "addressCountry": "IN" },
+        "knowsAbout": ["Android", "Kotlin Multiplatform", "SwiftUI", "AI agents", "Model Context Protocol", "Speech recognition", "Text-to-speech", "WebRTC", "Three.js"],
         "sameAs": [
           "https://github.com/bibutikoley",
           "https://www.linkedin.com/in/bibutikoley/",
@@ -43,6 +46,7 @@
       <a href="#now" data-nav="now">Now</a>
       <a href="#work" data-nav="work">Work</a>
       <a href="#live" data-nav="live" hidden>Live</a>
+      <a href="#highlights" data-nav="highlights">About</a>
       <a href="#activity" data-nav="activity">Activity</a>
       <a href="#stack" data-nav="stack">Stack</a>
       <a href="#contact" data-nav="contact">Contact</a>
@@ -51,13 +55,12 @@
     <main id="main">
       <header id="hero" class="panel panel--hero" data-scene="hero">
         <div class="panel__inner">
-          <p class="eyebrow reveal" style="--i: 0">Mumbai · Mobile engineer</p>
+          <p class="eyebrow reveal" style="--i: 0" id="hero-role">Mobile &amp; AI engineer · WebMD · Mumbai</p>
           <h1 class="title reveal" style="--i: 1">Bibuti Koley</h1>
-          <p class="lede reveal" style="--i: 2">
-            I build mobile apps and, lately, voice interfaces that run
-            <em>on the device instead of in someone else's cloud</em>: speech recognition,
-            language models and text-to-speech stitched into pipelines that keep sensitive
-            conversations private.
+          <p class="headline reveal" style="--i: 1" id="hero-headline">Developer building with AI</p>
+          <p class="lede reveal" style="--i: 2" id="hero-tagline">
+            I ship Android and iOS apps, AI-native developer tooling, and local-first voice systems,
+            and I rebuild my stack whenever something better lands.
           </p>
           <p class="status reveal" style="--i: 3" id="status" aria-live="polite">
             <span class="status__dot" aria-hidden="true"></span>
@@ -102,6 +105,15 @@
             Anything I deploy to GitHub Pages shows up here automatically.
           </p>
           <div id="demos" class="demos reveal" style="--i: 2"></div>
+        </div>
+      </section>
+
+      <section id="highlights" class="panel" data-scene="highlights" aria-labelledby="highlights-title">
+        <div class="panel__inner">
+          <h2 id="highlights-title" class="h2 reveal" style="--i: 0">What I do</h2>
+          <p class="sub reveal" style="--i: 1" id="about-summary"></p>
+          <div id="focus" class="focus reveal" style="--i: 2"></div>
+          <div id="milestones" class="milestones reveal" style="--i: 3" hidden></div>
         </div>
       </section>
 

@@ -563,7 +563,7 @@ def render_activity(s: dict, path: str) -> None:
     write(path, out)
 
 
-def render_hero(s: dict, now_item: dict, path: str, now: dt.datetime | None = None) -> None:
+def render_hero(s: dict, now_item: dict, path: str, now: dt.datetime | None = None, about: dict | None = None) -> None:
     """Animated README hero: a breathing contribution waveform with a live status line.
 
     GitHub renders this inside an <img>, which permits inline CSS, gradients,
@@ -673,7 +673,10 @@ def render_hero(s: dict, now_item: dict, path: str, now: dt.datetime | None = No
     )
 
     out.append(f'<text class="name" x="{x0}" y="64">{escape(s["name"])}</text>')
-    out.append(f'<text class="role" x="{x0}" y="92">Mobile engineer · local-first voice AI</text>')
+    role = (about or {}).get("headline") or "Developer building with AI"
+    if (about or {}).get("role"):
+        role = f"{role} · {about['role']}"
+    out.append(f'<text class="role" x="{x0}" y="92">{escape(role[:70])}</text>')
     out.append(
         f'<circle class="dot" cx="{x0 + 5}" cy="119" r="4">'
         '<animate attributeName="opacity" values="1;0.35;1" dur="1.6s" repeatCount="indefinite"/></circle>'
@@ -701,6 +704,65 @@ def write(path: str, lines: list[str]) -> None:
 
 
 # --------------------------------------------------------------------------- projects
+
+ABOUT_PATH = "data/about.json"
+
+
+def load_about(path: str = ABOUT_PATH) -> dict:
+    """Curated profile copy shared by the site, the README and the hero card."""
+    try:
+        with open(path, encoding="utf-8") as fh:
+            raw = json.load(fh)
+    except FileNotFoundError:
+        raw = {}
+    return {
+        "headline": raw.get("headline") or "Developer building with AI",
+        "role": raw.get("role") or "",
+        "tagline": raw.get("tagline") or "",
+        "summary": raw.get("summary") or "",
+        "focus": raw.get("focus") or [],
+        "experience": raw.get("experience") or [],
+        "highlights": raw.get("highlights") or [],
+    }
+
+
+def replace_block(content: str, name: str, body: str) -> str:
+    """Swap the text between <!-- NAME:START --> and <!-- NAME:END --> markers."""
+    start_tag, end_tag = f"<!-- {name}:START -->", f"<!-- {name}:END -->"
+    if start_tag not in content or end_tag not in content:
+        print(f"README: {name} markers missing, skipping", file=sys.stderr)
+        return content
+    start = content.index(start_tag)
+    end = content.index(end_tag) + len(end_tag)
+    return content[:start] + f"{start_tag}\n\n{body}\n\n{end_tag}" + content[end:]
+
+
+def render_about(about: dict, readme: str = "README.md") -> None:
+    """Intro paragraph and a highlights list in the README, from data/about.json."""
+    with open(readme, encoding="utf-8") as fh:
+        content = fh.read()
+
+    intro = f"**{about['headline']}.** {about['tagline']}".strip()
+    if about["summary"]:
+        intro += f"\n\n{about['summary']}"
+    content = replace_block(content, "ABOUT", intro)
+
+    rows = []
+    for item in about["highlights"][:8]:
+        title = f"[{item['title']}]({item['url']})" if item.get("url") else item.get("title", "")
+        when = item.get("date", "")
+        org = f" · {item['org']}" if item.get("org") else ""
+        detail = f" — {item['detail']}" if item.get("detail") else ""
+        rows.append(f"- **{when}**{org}: {title}{detail}" if when else f"- {title}{org}{detail}")
+    if rows:
+        content = replace_block(content, "HIGHLIGHTS", "\n".join(rows))
+    else:
+        content = replace_block(content, "HIGHLIGHTS", "_Milestones will appear here once `data/about.json` lists them._")
+
+    with open(readme, "w", encoding="utf-8") as fh:
+        fh.write(content)
+    print(f"updated about/highlights in {readme}", file=sys.stderr)
+
 
 PROJECTS_START = "<!-- PROJECTS:START -->"
 PROJECTS_END = "<!-- PROJECTS:END -->"
@@ -847,6 +909,7 @@ def build_snapshot(s: dict, events: list[dict], overrides: dict, now: dt.datetim
         "repos": repos,
         "events": events,
         "now": derive_now(events, repos),
+        "about": load_about(),
     }
 
 
@@ -906,9 +969,10 @@ def main() -> int:
     render_stats(s, os.path.join(args.out, "github-stats.svg"))
     render_languages(s, os.path.join(args.out, "top-languages.svg"))
     render_activity(s, os.path.join(args.out, "activity.svg"))
-    render_hero(s, snapshot["now"], os.path.join(args.out, "hero.svg"), now)
+    render_hero(s, snapshot["now"], os.path.join(args.out, "hero.svg"), now, snapshot["about"])
     if args.readme:
         render_projects(s["repos"], args.readme)
+        render_about(snapshot["about"], args.readme)
     if args.site_json:
         os.makedirs(os.path.dirname(args.site_json) or ".", exist_ok=True)
         with open(args.site_json, "w", encoding="utf-8") as fh:
