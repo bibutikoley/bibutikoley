@@ -56,12 +56,24 @@ export async function freshSnapshot() {
   return snapshot;
 }
 
-function shapeRestRepo(r, snapshotRepos) {
+/** Live version of a repo: a non-GitHub homepage, else its Pages URL when enabled. */
+function demoUrl(r, login, known) {
+  const home = String(r.homepage || '').trim();
+  if (home && !/^https?:\/\/github\.com\//.test(home)) return home;
+  // The snapshot only records Pages URLs that answered at build time; trust
+  // it over the flag alone so an unbuilt site is never advertised.
+  if (known && 'demo' in known) return known.demo;
+  if (r.has_pages) return `https://${login}.github.io/${r.name}/`;
+  return null;
+}
+
+function shapeRestRepo(r, snapshotRepos, login) {
   const known = snapshotRepos.find((s) => s.name.toLowerCase() === r.name.toLowerCase());
   return {
     name: r.name,
     url: r.html_url,
     homepage: r.homepage || null,
+    demo: demoUrl(r, login, known),
     description: describe(r.name, r.description),
     language: r.language || known?.language || null,
     languageColor: languageColor(r.language, known?.languageColor),
@@ -118,7 +130,7 @@ export async function loadLive(base) {
   if (reposRes.status === 'fulfilled' && Array.isArray(reposRes.value)) {
     data.repos = reposRes.value
       .filter((r) => !r.fork && !r.archived && !excluded.has(r.name.toLowerCase()))
-      .map((r) => shapeRestRepo(r, base.repos))
+      .map((r) => shapeRestRepo(r, base.repos, login))
       .sort((a, b) => String(b.pushedAt).localeCompare(String(a.pushedAt)))
       .slice(0, 30);
   }

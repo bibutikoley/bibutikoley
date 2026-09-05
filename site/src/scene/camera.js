@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-export const SECTIONS = ['hero', 'now', 'work', 'activity', 'stack', 'contact'];
+export const SECTIONS = ['hero', 'now', 'work', 'live', 'activity', 'stack', 'contact'];
 
 // One keyframe per section: where the camera sits, what it looks at, and how
 // the scene elements should present themselves.
@@ -8,6 +8,7 @@ const KEYS = {
   hero: { pos: [0, 0.2, 5.4], look: [0, 0, 0], side: 1, morph: 0, ring: 0.07, nodes: 0.35, amp: 1 },
   now: { pos: [1.6, 0.9, 4.6], look: [0.3, 0.1, 0], side: 1, morph: 0.35, ring: 0.07, nodes: 0.5, amp: 0.8 },
   work: { pos: [0, 2.6, 6.8], look: [0, 0, 0], side: 0, morph: 0, ring: 0.12, nodes: 1, amp: 0.7 },
+  live: { pos: [-2.4, -1.2, 6.4], look: [0, 0.8, 0], side: 0, morph: 0.1, ring: 0.1, nodes: 0.6, amp: 0.85 },
   activity: { pos: [0, 6.8, 0.6], look: [0, -1.2, 0], side: 0, morph: 1, ring: 1, nodes: 0.15, amp: 1 },
   stack: { pos: [-2.6, 0.4, 4.8], look: [0, 0, 0], side: 1, morph: 0.2, ring: 0.1, nodes: 0.3, amp: 0.9 },
   contact: { pos: [0, -0.6, 6.6], look: [0, 0.4, 0], side: 0, morph: 0, ring: 0.2, nodes: 0.4, amp: 0.6 },
@@ -16,7 +17,11 @@ const KEYS = {
 const smooth = (x) => x * x * (3 - 2 * x);
 const lerp = (a, b, t) => a + (b - a) * t;
 
-export function createCameraRig(camera, caps) {
+/**
+ * @param names the section names actually present on the page, in scroll
+ *   order (a section without content, like "live", may be hidden).
+ */
+export function createCameraRig(camera, caps, names = SECTIONS) {
   const pos = new THREE.Vector3().fromArray(KEYS.hero.pos);
   const look = new THREE.Vector3();
   const targetPos = new THREE.Vector3();
@@ -24,9 +29,10 @@ export function createCameraRig(camera, caps) {
   const state = { morph: 0, ring: 0.12, nodes: 0.35, amp: 1 };
   const parallax = new THREE.Vector2();
   let first = true;
+  let order = names.filter((n) => KEYS[n]);
 
   function keyAt(index) {
-    return KEYS[SECTIONS[Math.max(0, Math.min(SECTIONS.length - 1, index))]];
+    return KEYS[order[Math.max(0, Math.min(order.length - 1, index))]];
   }
 
   /** Sphere sits right of the text on wide screens, lower and behind it on narrow ones. */
@@ -64,6 +70,9 @@ export function createCameraRig(camera, caps) {
 
   return {
     state,
+    setOrder(next) {
+      order = next.filter((n) => KEYS[n]);
+    },
     setPointer(nx, ny) {
       parallax.set(nx, ny);
     },

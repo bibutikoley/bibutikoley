@@ -3,7 +3,8 @@
  * A section is exactly "itself" when its centre sits at the viewport centre;
  * in between, the camera glides from one keyframe to the next.
  */
-export function createScroll(panels) {
+export function createScroll(initialPanels) {
+  let panels = initialPanels;
   let centers = [];
 
   function measure() {
@@ -29,6 +30,10 @@ export function createScroll(panels) {
 
   return {
     measure,
+    setPanels(next) {
+      panels = next;
+      measure();
+    },
     progress() {
       const y = window.scrollY + window.innerHeight * 0.5;
       const n = centers.length;

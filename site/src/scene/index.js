@@ -45,9 +45,17 @@ export async function createScene(canvas, data, shownRepos) {
   const nodes = createNodes(caps, labelsRoot);
   scene.add(waveform.object, ring.object, nodes.object);
 
-  const panels = SECTIONS.map((name) => document.querySelector(`[data-scene="${name}"]`)).filter(Boolean);
-  const scroll = createScroll(panels);
-  const rig = createCameraRig(camera, caps);
+  // Sections can appear or disappear with data (the "live" section only
+  // exists when a repo has a deployed page), so the panel list is re-read.
+  const activePanels = () =>
+    SECTIONS.map((name) => document.querySelector(`[data-scene="${name}"]`)).filter((p) => p && !p.hidden);
+  const scroll = createScroll(activePanels());
+  const rig = createCameraRig(camera, caps, activePanels().map((p) => p.dataset.scene));
+  function measure() {
+    const panels = activePanels();
+    scroll.setPanels(panels);
+    rig.setOrder(panels.map((p) => p.dataset.scene));
+  }
 
   let composer = null;
   if (caps.bloom) {
@@ -208,6 +216,7 @@ export async function createScene(canvas, data, shownRepos) {
 
   return {
     setData,
+    measure,
     highlight,
     caps,
     destroy() {

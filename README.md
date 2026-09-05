@@ -19,9 +19,9 @@ language models, and text-to-speech stitched into pipelines that keep sensitive 
 | [voice-transcription](https://github.com/bibutikoley/voice-transcription) | Live microphone transcription in the terminal, with five swappable ASR backends and vocabulary biasing for clinical speech | **Python** |
 | [auris-server](https://github.com/bibutikoley/auris-server) | Neural text-to-speech server built on Kokoro-82M, with a normalization pipeline that reads medical notation aloud correctly (BID → "twice a day") | **Python** |
 | [NetworkConfig](https://github.com/bibutikoley/NetworkConfig) | Kotlin Multiplatform library for observing network connectivity in real time across Android and iOS | **Kotlin** |
-| [ai-sdlc-claude](https://github.com/bibutikoley/ai-sdlc-claude) | _No description yet_ | **Shell** |
+| [ai-sdlc-claude](https://github.com/bibutikoley/ai-sdlc-claude) · [live ↗](https://bibutikoley.github.io/ai-sdlc-claude/) | _No description yet_ | **Shell** |
 | [ai-sdlc-muse](https://github.com/bibutikoley/ai-sdlc-muse) | _No description yet_ | **Python** |
-| [jetengine](https://github.com/bibutikoley/jetengine) | _No description yet_ | **JavaScript** |
+| [jetengine](https://github.com/bibutikoley/jetengine) · [live ↗](https://bibutikoley.github.io/jetengine/) | _No description yet_ | **JavaScript** |
 
 <!-- PROJECTS:END -->
 

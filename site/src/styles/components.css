@@ -315,6 +315,50 @@
   color: var(--accent);
 }
 
+.repo__live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ok);
+  white-space: nowrap;
+}
+
+.repo__live i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ok);
+  box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.6);
+  animation: pulse 1.8s ease-out infinite;
+}
+
+.repo--live {
+  border-color: rgba(52, 211, 153, 0.25);
+}
+
+.repo--live:hover,
+.repo--live.is-hot,
+.repo--live:focus-within {
+  border-color: rgba(52, 211, 153, 0.6);
+  background: rgba(52, 211, 153, 0.06);
+}
+
+/* Sits above the card's stretched link so it stays independently clickable. */
+.repo__code {
+  position: relative;
+  z-index: 1;
+  margin-left: auto;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.repo__code:hover {
+  color: var(--text);
+}
+
 .repo__desc {
   color: var(--muted);
   font-size: 14.5px;
@@ -356,6 +400,130 @@
   border-radius: 999px;
   border: 1px solid var(--border);
   color: var(--muted);
+}
+
+/* Live pages */
+.demos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  gap: 18px;
+}
+
+.demo {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid rgba(52, 211, 153, 0.22);
+  overflow: hidden;
+  transition:
+    border-color 0.3s,
+    transform 0.4s var(--ease),
+    box-shadow 0.4s var(--ease);
+}
+
+.demo:hover,
+.demo:focus-within {
+  border-color: rgba(52, 211, 153, 0.6);
+  transform: translateY(-3px);
+  box-shadow: 0 24px 60px -30px rgba(52, 211, 153, 0.45);
+}
+
+.demo__hit {
+  display: block;
+  color: inherit;
+}
+
+.demo__hit:hover {
+  text-decoration: none;
+}
+
+.demo__frame {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background:
+    radial-gradient(60% 60% at 50% 40%, rgba(34, 211, 238, 0.14), transparent 70%),
+    var(--bg-2);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.demo__placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--muted);
+  transition: opacity 0.5s var(--ease);
+}
+
+.demo__frame iframe {
+  /* Render the page at desktop width, scaled down to fit the card. */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1280px;
+  height: 800px;
+  border: 0;
+  transform-origin: 0 0;
+  transform: scale(var(--scale, 0.33));
+  pointer-events: none;
+  background: transparent;
+}
+
+/* The placeholder sits under the iframe and fades once the page has loaded. */
+.demo__frame.is-ready .demo__placeholder {
+  opacity: 0;
+}
+
+.demo__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px 20px 18px;
+}
+
+.demo__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.demo__name {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.demo__name a {
+  color: var(--text);
+}
+
+.demo__desc {
+  color: var(--muted);
+  font-size: 14.5px;
+}
+
+.demo__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.demo__ago {
+  margin-left: auto;
+  font-size: 13px;
+  color: var(--faint);
+}
+
+.btn--small {
+  padding: 8px 14px;
+  font-size: 14px;
 }
 
 /* Activity */

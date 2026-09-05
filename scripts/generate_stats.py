@@ -148,6 +148,44 @@ def fetch_events(login: str, token: str, pages: int = 2) -> list[dict]:
     return events
 
 
+def fetch_pages_flags(login: str, token: str) -> dict[str, bool]:
+    """name -> has_pages, from the REST repo list (GraphQL does not expose it)."""
+    flags: dict[str, bool] = {}
+    for page in (1, 2):
+        batch = rest_get(token, f"/users/{login}/repos?per_page=100&type=owner&page={page}")
+        if not batch:
+            break
+        for repo in batch:
+            flags[repo["name"].lower()] = bool(repo.get("has_pages"))
+        if len(batch) < 100:
+            break
+    return flags
+
+
+def demo_url(repo: dict, login: str, has_pages: bool) -> str | None:
+    """Where a repository's live version lives, if it has one.
+
+    The homepage wins when it points somewhere other than GitHub itself;
+    otherwise a Pages-enabled repository maps to the standard project URL.
+    """
+    home = (repo.get("homepageUrl") or "").strip()
+    if home and not home.startswith(("https://github.com/", "http://github.com/")):
+        return home
+    if has_pages:
+        return f"https://{login}.github.io/{repo['name']}/"
+    return None
+
+
+def url_is_live(url: str) -> bool:
+    """HEAD-check a demo before advertising it; an unbuilt Pages site 404s."""
+    req = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "profile-stats-generator"})
+    try:
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            return 200 <= resp.status < 400
+    except (urllib.error.URLError, TimeoutError, ValueError):
+        return False
+
+
 def short_repo(full: str, login: str) -> str:
     owner, _, name = full.partition("/")
     return name if owner.lower() == login.lower() else full
@@ -730,6 +768,8 @@ def render_projects(repos: list[dict], readme: str = "README.md") -> None:
         stack = " · ".join(filter(None, [f"**{lang}**" if lang else "", ", ".join(topics[:3])]))
         stars = repo.get("stargazerCount", 0)
         title = f"[{name}]({repo['url']})" + (f" ⭐ {stars}" if stars else "")
+        if repo.get("demo"):
+            title += f" · [live ↗]({repo['demo']})"
         rows.append(f"| {title} | {desc} | {stack or '—'} |")
 
     block = f"{PROJECTS_START}\n\n" + "\n".join(rows) + f"\n\n{PROJECTS_END}"
@@ -751,6 +791,7 @@ def shape_repo(repo: dict, overrides: dict) -> dict:
         "name": repo["name"],
         "url": repo["url"],
         "homepage": repo.get("homepageUrl") or None,
+        "demo": repo.get("demo") or None,
         "description": resolve_description(repo, overrides),
         "language": lang.get("name") or None,
         "languageColor": lang.get("color") or None,
@@ -850,6 +891,14 @@ def main() -> int:
     events = normalize_events(raw_events, args.login)
     if token:
         enrich_events(events, token)
+
+    # Attach live demo links (Pages sites / homepages) to repositories.
+    pages = fetch_pages_flags(args.login, token) if token else {}
+    for repo in user["repositories"]["nodes"]:
+        if repo.get("demo"):
+            continue  # already resolved in a fixture
+        url = demo_url(repo, args.login, pages.get(repo["name"].lower(), False))
+        repo["demo"] = url if url and (not token or url_is_live(url)) else None
 
     os.makedirs(args.out, exist_ok=True)
     s = summarize(user)

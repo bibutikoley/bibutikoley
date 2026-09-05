@@ -26,14 +26,20 @@ export function renderWork(data) {
   const repos = pickRepos(data.repos || []);
 
   for (const repo of repos) {
+    // A repo with a live site opens that site; the code link stays one click away.
+    const primary = repo.demo || repo.url;
     const card = h(
       'article',
-      { class: 'repo', dataset: { repo: repo.name }, tabindex: '-1' },
+      { class: `repo${repo.demo ? ' repo--live' : ''}`, dataset: { repo: repo.name }, tabindex: '-1' },
       h(
         'div',
         { class: 'repo__head' },
-        h('h3', { class: 'repo__name' }, h('a', { href: repo.url, rel: 'noopener' }, repo.name)),
-        repo.featured ? h('span', { class: 'repo__featured' }, 'Featured') : null,
+        h('h3', { class: 'repo__name' }, h('a', { href: primary, rel: 'noopener', 'aria-label': repo.demo ? `${repo.name} (open live site)` : repo.name }, repo.name)),
+        repo.demo
+          ? h('span', { class: 'repo__live' }, h('i', { 'aria-hidden': 'true' }), 'Live')
+          : repo.featured
+            ? h('span', { class: 'repo__featured' }, 'Featured')
+            : null,
       ),
       h('p', { class: 'repo__desc' }, repo.description || 'No description yet.'),
       h(
@@ -44,6 +50,7 @@ export function renderWork(data) {
           : null,
         repo.stars ? h('span', {}, `★ ${repo.stars}`) : null,
         repo.pushedAt ? h('span', { title: `Last push ${formatDate(repo.pushedAt)}` }, `pushed ${shortAgo(repo.pushedAt)} ago`) : null,
+        repo.demo ? h('a', { class: 'repo__code', href: repo.url, rel: 'noopener', 'aria-label': `${repo.name} source on GitHub` }, 'Code ↗') : null,
       ),
       repo.topics?.length ? h('div', { class: 'repo__topics' }, repo.topics.slice(0, 4).map((t) => h('span', {}, t))) : null,
     );

@@ -7,6 +7,7 @@ import { baseline, freshSnapshot, loadLive, merge } from './data/api.js';
 import { renderHero } from './ui/hero.js';
 import { renderNow } from './ui/now.js';
 import { renderWork } from './ui/work.js';
+import { renderLive } from './ui/live.js';
 import { renderActivity } from './ui/activity.js';
 import { renderStack } from './ui/stack.js';
 import { renderFooter } from './ui/footer.js';
@@ -18,10 +19,12 @@ function renderAll(data, sync) {
   renderHero(data, sync);
   renderNow(data, sync);
   const shown = renderWork(data);
+  renderLive(data);
   renderActivity(data);
   renderStack(data);
   renderFooter(data);
   scene?.setData(data, shown);
+  scene?.measure();
   return shown;
 }
 
