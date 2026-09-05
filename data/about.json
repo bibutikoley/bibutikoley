@@ -28,14 +28,14 @@
       "company": "WebMD",
       "period": "Oct 2025 – present",
       "location": "Navi Mumbai",
-      "detail": "Leading the team behind Medscape's AI features and professional apps: agentic AI for clinicians alongside the Android and iOS apps, built with Kotlin Flow and Jetpack Compose."
+      "detail": "Leading the team behind Medscape's AI features and professional apps: agentic AI for clinicians alongside the Android and iOS apps, built with Kotlin Flow and Jetpack Compose. Highflier Award, 2026."
     },
     {
       "role": "Senior Software Engineer",
       "company": "WebMD",
       "period": "Oct 2022 – Oct 2025",
       "location": "Navi Mumbai",
-      "detail": "Android engineering with Kotlin Flow and Compose across WebMD's consumer apps."
+      "detail": "Android engineering with Kotlin Flow and Compose across WebMD's consumer apps. Highflier Award in 2023 and 2025."
     },
     {
       "role": "Senior Software Developer",
@@ -61,11 +61,35 @@
   ],
   "highlights": [
     {
+      "date": "2026-06",
+      "title": "Highflier Award",
+      "org": "WebMD",
+      "detail": "Third time: awarded for April–June 2026, the first as Team Lead.",
+      "url": "https://www.linkedin.com/in/bibutikoley/",
+      "kind": "award"
+    },
+    {
       "date": "2025-10",
       "title": "Promoted to Team Lead, Medscape AI & Professional Apps",
       "org": "WebMD",
       "detail": "Took over the Medscape AI and professional apps team after three years as a senior engineer.",
       "url": "https://www.linkedin.com/in/bibutikoley/"
+    },
+    {
+      "date": "2025-06",
+      "title": "Highflier Award",
+      "org": "WebMD",
+      "detail": "Second time: awarded for April–June 2025.",
+      "url": "https://www.linkedin.com/in/bibutikoley/",
+      "kind": "award"
+    },
+    {
+      "date": "2023-06",
+      "title": "Highflier Award",
+      "org": "WebMD",
+      "detail": "First time: awarded for April–June 2023, within a year of joining.",
+      "url": "https://www.linkedin.com/in/bibutikoley/",
+      "kind": "award"
     },
     {
       "date": "2022-10",

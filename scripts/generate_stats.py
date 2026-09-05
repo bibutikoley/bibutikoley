@@ -751,6 +751,8 @@ def render_about(about: dict, readme: str = "README.md") -> None:
     rows = []
     for item in about["highlights"][:8]:
         title = f"[{item['title']}]({item['url']})" if item.get("url") else item.get("title", "")
+        if item.get("kind") == "award":
+            title = f"🏆 {title}"
         when = item.get("date", "")
         org = f" · {item['org']}" if item.get("org") else ""
         detail = f" — {item['detail']}" if item.get("detail") else ""

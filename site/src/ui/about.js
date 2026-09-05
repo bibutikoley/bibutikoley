@@ -48,7 +48,7 @@ export function renderAbout(data) {
       list.append(
         h(
           'li',
-          { class: 'timeline__item' },
+          { class: `timeline__item${item.kind === 'award' ? ' timeline__item--award' : ''}` },
           h('time', { class: 'timeline__when', datetime: item.date }, monthLabel(item.date)),
           h(
             'div',
