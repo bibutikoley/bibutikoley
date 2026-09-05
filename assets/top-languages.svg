@@ -22,23 +22,23 @@
 <rect x="25" y="48" rx="5" width="410" height="10" fill="var(--track)"/>
 <clipPath id="bar"><rect x="25" y="48" rx="5" width="410" height="10"/></clipPath>
 <g clip-path="url(#bar)">
-<rect x="25.00" y="48" width="139.53" height="10" fill="#3572A5"/>
-<rect x="164.53" y="48" width="97.21" height="10" fill="#f1e05a"/>
-<rect x="261.74" y="48" width="78.99" height="10" fill="#b07219"/>
-<rect x="340.73" y="48" width="48.83" height="10" fill="#F05138"/>
-<rect x="389.56" y="48" width="31.56" height="10" fill="#89e051"/>
-<rect x="421.12" y="48" width="13.88" height="10" fill="#A97BFF"/>
+<rect x="25.00" y="48" width="136.83" height="10" fill="#3572A5"/>
+<rect x="161.83" y="48" width="113.22" height="10" fill="#f1e05a"/>
+<rect x="275.05" y="48" width="72.77" height="10" fill="#b07219"/>
+<rect x="347.81" y="48" width="44.98" height="10" fill="#F05138"/>
+<rect x="392.79" y="48" width="29.07" height="10" fill="#89e051"/>
+<rect x="421.86" y="48" width="13.14" height="10" fill="#663399"/>
 </g>
 <circle cx="30" cy="80" r="5" fill="#3572A5"/>
-<text class="label" x="42" y="84">Python 34.0%</text>
+<text class="label" x="42" y="84">Python 33.4%</text>
 <circle cx="235" cy="80" r="5" fill="#f1e05a"/>
-<text class="label" x="247" y="84">JavaScript 23.7%</text>
+<text class="label" x="247" y="84">JavaScript 27.6%</text>
 <circle cx="30" cy="102" r="5" fill="#b07219"/>
-<text class="label" x="42" y="106">Java 19.3%</text>
+<text class="label" x="42" y="106">Java 17.7%</text>
 <circle cx="235" cy="102" r="5" fill="#F05138"/>
-<text class="label" x="247" y="106">Swift 11.9%</text>
+<text class="label" x="247" y="106">Swift 11.0%</text>
 <circle cx="30" cy="124" r="5" fill="#89e051"/>
-<text class="label" x="42" y="128">Shell 7.7%</text>
-<circle cx="235" cy="124" r="5" fill="#A97BFF"/>
-<text class="label" x="247" y="128">Kotlin 3.4%</text>
+<text class="label" x="42" y="128">Shell 7.1%</text>
+<circle cx="235" cy="124" r="5" fill="#663399"/>
+<text class="label" x="247" y="128">CSS 3.2%</text>
 </svg>
