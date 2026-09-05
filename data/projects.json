@@ -1,18 +1,29 @@
 {
   "_comment": "Curated project metadata for the README table. Descriptions here win over the GitHub repository description; 'featured' pins order; 'exclude' hides repositories. Repository names match case-insensitively.",
-  "exclude": ["bibutikoley"],
+  "exclude": [
+    "bibutikoley"
+  ],
   "featured": [
-    "Livekit-VoiceBackend",
-    "Livekit-VoiceiOS",
+    "jetengine",
+    "ai-sdlc-claude",
     "voice-transcription",
     "auris-server",
-    "NetworkConfig"
+    "Nad",
+    "NetworkConfig",
+    "Livekit-VoiceBackend",
+    "Livekit-VoiceiOS"
   ],
   "descriptions": {
     "Livekit-VoiceBackend": "Local-first voice backend: FastAPI + a LiveKit agent worker running cascaded STT → LLM → TTS on-device, with a safety layer between understanding and speaking",
     "Livekit-VoiceiOS": "SwiftUI chat app with voice mode inside the thread — live captions, AI disclosure, explicit GDPR Art 9 consent, and no model-provider secrets on the device",
     "voice-transcription": "Live microphone transcription in the terminal, with five swappable ASR backends and vocabulary biasing for clinical speech",
     "auris-server": "Neural text-to-speech server built on Kokoro-82M, with a normalization pipeline that reads medical notation aloud correctly (BID → \"twice a day\")",
-    "NetworkConfig": "Kotlin Multiplatform library for observing network connectivity in real time across Android and iOS"
+    "NetworkConfig": "Kotlin Multiplatform library for observing network connectivity in real time across Android and iOS",
+    "jetengine": "Interactive 3D turbofan simulator (CFM56-class, the 737NG engine) in Three.js: 30 clickable parts, X-ray, cutaway and exploded views, animated airflow, and gauges driven by a real station-by-station Brayton-cycle model",
+    "ai-sdlc-claude": "Anthropic's AI-Native SDLC Playbook as a Claude Code plugin: 14 slash commands, hooks as guardrails and approval gates, subagents, policy skills and a scaffolder that drops the whole loop into any repo",
+    "ai-sdlc-muse": "Reference implementation of the AI-native SDLC loop: intent → spec → plan → build → review → monitor, with versioned artifacts, deterministic hooks, CI evals and control-band monitoring",
+    "Nad": "Real-time voice agents you run on your own infrastructure: WebRTC, low latency, no managed platform",
+    "nextcloud": "One-line installer that turns an Android device (Fire TV, Shield, a spare phone) into a Nextcloud server via Termux, booting with the device",
+    "streamlit_langchain_chat": "Streamlit chat interface over LangChain for talking to LLMs with conversation memory"
   }
 }

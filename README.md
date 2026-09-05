@@ -36,12 +36,12 @@ Most of my time now goes to the edge of what AI makes possible: agent-driven sof
 
 | Project | What it is | Stack |
 | --- | --- | --- |
+| [jetengine](https://github.com/bibutikoley/jetengine) · [live ↗](https://bibutikoley.github.io/jetengine/) | Interactive 3D turbofan simulator (CFM56-class, the 737NG engine) in Three.js: 30 clickable parts, X-ray, cutaway and exploded views, animated airflow, and gauges driven by a real station-by-station Brayton-cycle model | **JavaScript** |
+| [ai-sdlc-claude](https://github.com/bibutikoley/ai-sdlc-claude) · [live ↗](https://bibutikoley.github.io/ai-sdlc-claude/) | Anthropic's AI-Native SDLC Playbook as a Claude Code plugin: 14 slash commands, hooks as guardrails and approval gates, subagents, policy skills and a scaffolder that drops the whole loop into any repo | **Shell** |
 | [voice-transcription](https://github.com/bibutikoley/voice-transcription) | Live microphone transcription in the terminal, with five swappable ASR backends and vocabulary biasing for clinical speech | **Python** |
 | [auris-server](https://github.com/bibutikoley/auris-server) | Neural text-to-speech server built on Kokoro-82M, with a normalization pipeline that reads medical notation aloud correctly (BID → "twice a day") | **Python** |
+| [Nad](https://github.com/bibutikoley/Nad) | Real-time voice agents you run on your own infrastructure: WebRTC, low latency, no managed platform | **Python** |
 | [NetworkConfig](https://github.com/bibutikoley/NetworkConfig) | Kotlin Multiplatform library for observing network connectivity in real time across Android and iOS | **Kotlin** |
-| [ai-sdlc-claude](https://github.com/bibutikoley/ai-sdlc-claude) · [live ↗](https://bibutikoley.github.io/ai-sdlc-claude/) | _No description yet_ | **Shell** |
-| [ai-sdlc-muse](https://github.com/bibutikoley/ai-sdlc-muse) | _No description yet_ | **Python** |
-| [jetengine](https://github.com/bibutikoley/jetengine) · [live ↗](https://bibutikoley.github.io/jetengine/) | _No description yet_ | **JavaScript** |
 
 <!-- PROJECTS:END -->
 
