@@ -1,11 +1,12 @@
-# Bibuti Koley
+<a href="https://bibutikoley.github.io"><img src="assets/hero.svg" width="900" alt="Bibuti Koley — mobile engineer building local-first voice AI. An animated waveform of this year's GitHub contributions with a live line about what I'm doing right now. Click to open the interactive 3D portfolio." /></a>
 
-**Mobile engineer building local-first voice AI**
+<p>
+  <b>▶ <a href="https://bibutikoley.github.io">bibutikoley.github.io</a></b> — an interactive Three.js view of what I'm building right now, fed live by the GitHub API. This card and that page are regenerated every day.
+</p>
 
-I build mobile apps — Android, Kotlin Multiplatform, and lately SwiftUI — and I spend most of my
-time now on voice interfaces that run **on the device instead of in someone else's cloud**:
-speech recognition, language models, and text-to-speech stitched into pipelines that keep
-sensitive conversations private.
+**Mobile engineer building local-first voice AI.** Android, Kotlin Multiplatform, and lately SwiftUI —
+and voice interfaces that run **on the device instead of in someone else's cloud**: speech recognition,
+language models, and text-to-speech stitched into pipelines that keep sensitive conversations private.
 
 ---
 
@@ -24,7 +25,7 @@ sensitive conversations private.
 
 <!-- PROJECTS:END -->
 
-<sub>This table refreshes daily from the GitHub API. Curated descriptions live in
+<sub>Refreshes daily from the GitHub API. Curated descriptions live in
 <a href="data/projects.json"><code>data/projects.json</code></a>.</sub>
 
 ## 🎯 What I Work On
@@ -35,37 +36,23 @@ sensitive conversations private.
 | **Voice agent architecture** | Cascaded STT → LLM → TTS over WebRTC with LiveKit, one shared agent core serving both text and voice |
 | **Privacy by construction** | Local models, no provider secrets on the device, short-lived scoped tokens, explicit consent before a microphone opens |
 | **Mobile** | Jetpack Compose and SwiftUI, Kotlin Multiplatform for shared domain logic, clean architecture that survives feature growth |
-| **Backends** | FastAPI services, Ollama-hosted models, retrieval and safety layers between understanding and speaking |
 
-## 🧰 Tech Stack
+## 🧰 Stack
 
-**Languages**
 ![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
 ![Swift](https://img.shields.io/badge/Swift-F05138?style=flat-square&logo=swift&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=dart&logoColor=white)
-
-**Mobile**
-![Android](https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=android&logoColor=white)
 ![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-4285F4?style=flat-square&logo=jetpackcompose&logoColor=white)
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-0071E3?style=flat-square&logo=swift&logoColor=white)
 ![Kotlin Multiplatform](https://img.shields.io/badge/Kotlin%20Multiplatform-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
-![Flutter](https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white)
 
-**Voice & AI**
 ![LiveKit](https://img.shields.io/badge/LiveKit-1F1F1F?style=flat-square&logo=livekit&logoColor=white)
 ![Whisper](https://img.shields.io/badge/Whisper-412991?style=flat-square&logo=openai&logoColor=white)
 ![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
 ![ONNX](https://img.shields.io/badge/ONNX-005CED?style=flat-square&logo=onnx&logoColor=white)
-
-**Backend & Tools**
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Gradle](https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=gradle&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 
 ## 📈 GitHub Stats
 
@@ -78,13 +65,14 @@ sensitive conversations private.
   <img alt="Contribution activity over the past year" src="assets/activity.svg" width="890" />
 </p>
 
-<sub>These cards are generated daily by
-<a href=".github/workflows/profile-stats.yml">a GitHub Action</a> and committed to this
-repository, so they render from GitHub itself rather than a third-party service.</sub>
+<sub>The hero card, these stats and the portfolio's data snapshot are generated daily by
+<a href=".github/workflows/profile-stats.yml">one GitHub Action</a> and committed here, so nothing
+depends on a third-party image service. The site itself is built with Three.js + Vite from
+<a href="site"><code>site/</code></a> and deployed to <a href="https://github.com/bibutikoley/bibutikoley.github.io">bibutikoley.github.io</a>.</sub>
 
 ## 📫 Reach Me
 
-[![Website](https://img.shields.io/badge/Website-bibutikoley.github.io-181717?style=flat-square&logo=github&logoColor=white)](https://bibutikoley.github.io/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-bibutikoley.github.io-22d3ee?style=flat-square&logo=threedotjs&logoColor=black)](https://bibutikoley.github.io/)
 [![Twitter](https://img.shields.io/badge/Twitter-@iambibuti-1DA1F2?style=flat-square&logo=x&logoColor=white)](https://twitter.com/iambibuti)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-bibutikoley-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bibutikoley/)
 [![Email](https://img.shields.io/badge/Email-bibutikoley@outlook.com-EA4335?style=flat-square&logo=maildotru&logoColor=white)](mailto:bibutikoley@outlook.com)

@@ -1,2 +1,4 @@
 # Raw API dump written during local debugging (--dump-json); not a deliverable.
 data/profile.json
+site/node_modules/
+site/dist/

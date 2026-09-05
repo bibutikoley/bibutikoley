@@ -1,18 +1,28 @@
-name: Profile stats
+name: Profile stats & site
 
-# Regenerates the SVG cards embedded in README.md and commits them, so the
-# README never depends on a third-party image service at render time.
+# Two jobs, one run:
+#   generate  regenerates the README cards, the animated hero and the site's
+#             data snapshot, then commits them.
+#   deploy    builds the Three.js portfolio from site/ and publishes it to the
+#             bibutikoley.github.io repository (the root Pages site).
+# Running deploy inside the same workflow means the daily data refresh always
+# reaches the live site, even though bot commits never trigger workflows.
 
 on:
   schedule:
     - cron: '17 3 * * *'
   workflow_dispatch:
   push:
-    # Only the generator itself retriggers this, so committing the generated
-    # assets below cannot start a loop.
+    branches: [master]
+    # Only source changes retrigger this. Everything the bot writes below
+    # (assets/, README.md, the snapshot) is deliberately outside this list,
+    # so a commit from this workflow can never start another run.
     paths:
       - '.github/workflows/profile-stats.yml'
-      - 'scripts/generate_stats.py'
+      - 'scripts/**'
+      - 'data/projects.json'
+      - 'site/**'
+      - '!site/public/data/profile.json'
 
 permissions:
   contents: write
@@ -24,10 +34,12 @@ concurrency:
 jobs:
   generate:
     runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
     steps:
       - uses: actions/checkout@v4
 
-      - name: Generate stat cards
+      - name: Generate cards, hero and site snapshot
         env:
           # STATS_TOKEN is optional: a personal access token with read:user
           # widens the stats to private contributions. Without it the built-in
@@ -37,16 +49,63 @@ jobs:
           python3 scripts/generate_stats.py \
             --login "${{ github.repository_owner }}" \
             --out assets \
-            --readme README.md
+            --readme README.md \
+            --site-json site/public/data/profile.json
 
       - name: Commit updated cards
+        id: commit
         run: |
           git config user.name  'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets data README.md
+          git add assets data README.md site/public/data/profile.json
           if git diff --staged --quiet; then
             echo 'Stat cards unchanged.'
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
           else
             git commit -m 'chore: refresh profile stat cards'
             git push origin HEAD:${{ github.ref_name }}
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
           fi
+
+  deploy:
+    needs: generate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Pick up the snapshot the generate job just committed.
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Build site
+        working-directory: site
+        run: |
+          npm ci
+          npm run build
+
+      - name: Check deploy key
+        env:
+          KEY: ${{ secrets.PAGES_DEPLOY_KEY }}
+        run: |
+          if [ -z "$KEY" ]; then
+            echo '::error::PAGES_DEPLOY_KEY is not set. Add the private half of a write-enabled deploy key for bibutikoley/bibutikoley.github.io as a repository secret.'
+            exit 1
+          fi
+
+      - name: Publish to bibutikoley.github.io
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.PAGES_DEPLOY_KEY }}
+          external_repository: bibutikoley/bibutikoley.github.io
+          publish_branch: master
+          publish_dir: ./site/dist
+          force_orphan: true
+          enable_jekyll: false
+          user_name: 'github-actions[bot]'
+          user_email: '41898282+github-actions[bot]@users.noreply.github.com'
+          commit_message: 'deploy: ${{ github.sha }}'

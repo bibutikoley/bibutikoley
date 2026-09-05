@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Bibuti Koley — local-first voice AI, mobile engineer</title>
+    <meta name="description" content="Bibuti Koley builds mobile apps and on-device voice AI: speech recognition, language models and text-to-speech that keep conversations private. A live view of what he is working on right now." />
+    <meta name="theme-color" content="#05070d" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="canonical" href="https://bibutikoley.github.io/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Bibuti Koley — local-first voice AI" />
+    <meta property="og:description" content="Mobile engineer building on-device speech pipelines. Live from GitHub: what I'm working on right now." />
+    <meta property="og:url" content="https://bibutikoley.github.io/" />
+    <meta property="og:image" content="https://bibutikoley.github.io/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@iambibuti" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Bibuti Koley",
+        "url": "https://bibutikoley.github.io/",
+        "jobTitle": "Mobile engineer",
+        "sameAs": [
+          "https://github.com/bibutikoley",
+          "https://www.linkedin.com/in/bibutikoley/",
+          "https://twitter.com/iambibuti"
+        ]
+      }
+    </script>
+  </head>
+  <body data-section="hero">
+    <a class="skip" href="#now">Skip to content</a>
+
+    <canvas id="scene" aria-hidden="true"></canvas>
+    <div id="labels" class="labels" aria-hidden="true"></div>
+    <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+
+    <nav class="nav" aria-label="Sections">
+      <a href="#hero" data-nav="hero">Top</a>
+      <a href="#now" data-nav="now">Now</a>
+      <a href="#work" data-nav="work">Work</a>
+      <a href="#activity" data-nav="activity">Activity</a>
+      <a href="#stack" data-nav="stack">Stack</a>
+      <a href="#contact" data-nav="contact">Contact</a>
+    </nav>
+
+    <main id="main">
+      <header id="hero" class="panel panel--hero" data-scene="hero">
+        <div class="panel__inner">
+          <p class="eyebrow reveal" style="--i: 0">Mumbai · Mobile engineer</p>
+          <h1 class="title reveal" style="--i: 1">Bibuti Koley</h1>
+          <p class="lede reveal" style="--i: 2">
+            I build mobile apps and, lately, voice interfaces that run
+            <em>on the device instead of in someone else's cloud</em>: speech recognition,
+            language models and text-to-speech stitched into pipelines that keep sensitive
+            conversations private.
+          </p>
+          <p class="status reveal" style="--i: 3" id="status" aria-live="polite">
+            <span class="status__dot" aria-hidden="true"></span>
+            <span class="status__text">Loading what I'm up to…</span>
+          </p>
+          <div class="cta reveal" style="--i: 4">
+            <a class="btn btn--primary" href="#now">See what I'm building</a>
+            <a class="btn" href="https://github.com/bibutikoley" rel="me">GitHub ↗</a>
+          </div>
+          <p class="hint reveal" style="--i: 5" aria-hidden="true">Scroll</p>
+        </div>
+      </header>
+
+      <section id="now" class="panel" data-scene="now" aria-labelledby="now-title">
+        <div class="panel__inner panel__inner--narrow">
+          <h2 id="now-title" class="h2 reveal" style="--i: 0">Now</h2>
+          <p class="sub reveal" style="--i: 1">What I've been doing publicly on GitHub, most recent first.</p>
+          <ol id="feed" class="feed reveal" style="--i: 2" aria-busy="true"></ol>
+          <p id="sync" class="sync reveal" style="--i: 3"></p>
+        </div>
+      </section>
+
+      <section id="work" class="panel" data-scene="work" aria-labelledby="work-title">
+        <div class="panel__inner">
+          <h2 id="work-title" class="h2 reveal" style="--i: 0">Recent work</h2>
+          <p class="sub reveal" style="--i: 1">
+            Repositories ordered by last push. Each one is also a node orbiting the sphere;
+            hover a card to find it.
+          </p>
+          <div id="repos" class="repos reveal" style="--i: 2"></div>
+        </div>
+      </section>
+
+      <section id="activity" class="panel panel--activity" data-scene="activity" aria-labelledby="activity-title">
+        <div class="panel__inner panel__inner--center">
+          <h2 id="activity-title" class="h2 reveal" style="--i: 0">A year of commits</h2>
+          <dl id="stats" class="stats reveal" style="--i: 1"></dl>
+          <div id="calendar" class="calendar reveal" style="--i: 2" role="img" aria-label="Contribution calendar for the past year"></div>
+          <p class="sub reveal" style="--i: 3">
+            The ring behind this is the same data: one bar per day, the playhead sweeps through the year.
+          </p>
+        </div>
+      </section>
+
+      <section id="stack" class="panel" data-scene="stack" aria-labelledby="stack-title">
+        <div class="panel__inner panel__inner--narrow">
+          <h2 id="stack-title" class="h2 reveal" style="--i: 0">Stack</h2>
+          <p class="sub reveal" style="--i: 1">Languages by bytes across my public repositories, then the tools I reach for.</p>
+          <div id="languages" class="languages reveal" style="--i: 2"></div>
+          <div id="chips" class="chipgroups reveal" style="--i: 3"></div>
+        </div>
+      </section>
+
+      <footer id="contact" class="panel panel--contact" data-scene="contact">
+        <div class="panel__inner panel__inner--narrow">
+          <h2 class="h2 reveal" style="--i: 0">Say hello</h2>
+          <p class="sub reveal" style="--i: 1">
+            Ask me about on-device speech pipelines, Kotlin Multiplatform, or why your TTS
+            mispronounces "120/80".
+          </p>
+          <ul class="links reveal" style="--i: 2">
+            <li><a href="mailto:bibutikoley@outlook.com">bibutikoley@outlook.com</a></li>
+            <li><a href="https://github.com/bibutikoley" rel="me">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/bibutikoley/" rel="me">LinkedIn</a></li>
+            <li><a href="https://twitter.com/iambibuti" rel="me">X / Twitter</a></li>
+          </ul>
+          <p id="colophon" class="colophon reveal" style="--i: 3"></p>
+        </div>
+      </footer>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
