@@ -40,7 +40,7 @@ Most of my time now goes to the edge of what AI makes possible: agent-driven sof
 | [ai-sdlc-claude](https://github.com/bibutikoley/ai-sdlc-claude) · [live ↗](https://bibutikoley.github.io/ai-sdlc-claude/) | Anthropic's AI-Native SDLC Playbook as a Claude Code plugin: 14 slash commands, hooks as guardrails and approval gates, subagents, policy skills and a scaffolder that drops the whole loop into any repo | **Shell** |
 | [voice-transcription](https://github.com/bibutikoley/voice-transcription) | Live microphone transcription in the terminal, with five swappable ASR backends and vocabulary biasing for clinical speech | **Python** |
 | [NetworkConfig](https://github.com/bibutikoley/NetworkConfig) | Kotlin Multiplatform library for observing network connectivity in real time across Android and iOS | **Kotlin** |
-| [claude-marketplace](https://github.com/bibutikoley/claude-marketplace) · [live ↗](https://bibutikoley.github.io/claude-marketplace/) | _No description yet_ | **Python** |
+| [claude-marketplace](https://github.com/bibutikoley/claude-marketplace) · [live ↗](https://bibutikoley.github.io/claude-marketplace/) | Claude Code plugin marketplace — Apple Notes MCP server with local-first CRUD access to Notes.app on macOS | **Python** |
 | [mai-cat](https://github.com/bibutikoley/mai-cat) | Entire project with Frontend, Backend and Pipecat. | **Kotlin** |
 
 <!-- PROJECTS:END -->
