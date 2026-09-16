@@ -257,7 +257,7 @@
 /* Repo cards */
 .repos {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
   gap: 14px;
 }
 
@@ -306,6 +306,12 @@
   content: "";
   position: absolute;
   inset: 0;
+}
+
+.repo__badges {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
 }
 
 .repo__featured {
@@ -363,6 +369,11 @@
   color: var(--muted);
   font-size: 14.5px;
   flex: 1;
+}
+
+.repo__desc--empty {
+  color: var(--faint);
+  font-style: italic;
 }
 
 .repo__meta {

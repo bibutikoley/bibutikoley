@@ -28,29 +28,30 @@ export function renderWork(data) {
   for (const repo of repos) {
     // A repo with a live site opens that site; the code link stays one click away.
     const primary = repo.demo || repo.url;
+    // Live pill and Featured tag can both apply; keep them one right-aligned group.
+    const badges = [
+      repo.demo && h('span', { class: 'repo__live' }, h('i', { 'aria-hidden': 'true' }), 'Live'),
+      repo.featured && h('span', { class: 'repo__featured' }, 'Featured'),
+    ];
     const card = h(
       'article',
       { class: `repo${repo.demo ? ' repo--live' : ''}`, dataset: { repo: repo.name }, tabindex: '-1' },
       h(
         'div',
         { class: 'repo__head' },
-        h('h3', { class: 'repo__name' }, h('a', { href: primary, rel: 'noopener', 'aria-label': repo.demo ? `${repo.name} (open live site)` : repo.name }, repo.name)),
-        repo.demo
-          ? h('span', { class: 'repo__live' }, h('i', { 'aria-hidden': 'true' }), 'Live')
-          : repo.featured
-            ? h('span', { class: 'repo__featured' }, 'Featured')
-            : null,
+        h('h3', { class: 'repo__name' }, h('a', { href: primary, target: '_blank', rel: 'noopener', 'aria-label': repo.demo ? `${repo.name} (open live site)` : repo.name }, repo.name)),
+        badges.some(Boolean) ? h('span', { class: 'repo__badges' }, badges) : null,
       ),
-      h('p', { class: 'repo__desc' }, repo.description || 'No description yet.'),
+      h('p', { class: repo.description ? 'repo__desc' : 'repo__desc repo__desc--empty' }, repo.description || 'No description yet.'),
       h(
         'div',
         { class: 'repo__meta' },
         repo.language
           ? h('span', { class: 'repo__lang', style: { '--dot': repo.languageColor || '#8b949e' } }, h('i'), repo.language)
           : null,
-        repo.stars ? h('span', {}, `★ ${repo.stars}`) : null,
-        repo.pushedAt ? h('span', { title: `Last push ${formatDate(repo.pushedAt)}` }, `pushed ${shortAgo(repo.pushedAt)} ago`) : null,
-        repo.demo ? h('a', { class: 'repo__code', href: repo.url, rel: 'noopener', 'aria-label': `${repo.name} source on GitHub` }, 'Code ↗') : null,
+        repo.stars ? h('span', {}, h('span', { 'aria-hidden': 'true' }, '★ '), String(repo.stars), h('span', { class: 'sr-only' }, ' stars')) : null,
+        repo.pushedAt ? h('time', { datetime: repo.pushedAt, title: `Last push ${formatDate(repo.pushedAt)}` }, `pushed ${shortAgo(repo.pushedAt)} ago`) : null,
+        repo.demo ? h('a', { class: 'repo__code', href: repo.url, target: '_blank', rel: 'noopener', 'aria-label': `${repo.name} source on GitHub` }, 'Code ↗') : null,
       ),
       repo.topics?.length ? h('div', { class: 'repo__topics' }, repo.topics.slice(0, 4).map((t) => h('span', {}, t))) : null,
     );

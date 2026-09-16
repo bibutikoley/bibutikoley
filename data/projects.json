@@ -7,11 +7,7 @@
     "jetengine",
     "ai-sdlc-claude",
     "voice-transcription",
-    "auris-server",
-    "Nad",
-    "NetworkConfig",
-    "Livekit-VoiceBackend",
-    "Livekit-VoiceiOS"
+    "NetworkConfig"
   ],
   "descriptions": {
     "Livekit-VoiceBackend": "Local-first voice backend: FastAPI + a LiveKit agent worker running cascaded STT → LLM → TTS on-device, with a safety layer between understanding and speaking",
