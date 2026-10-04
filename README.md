@@ -17,7 +17,7 @@ Most of my time now goes to the edge of what AI makes possible: agent-driven sof
 <!-- HIGHLIGHTS:START -->
 
 - **2026-06** · WebMD: 🏆 [Highflier Award](https://www.linkedin.com/in/bibutikoley/) — Third time: awarded for April–June 2026, the first as Team Lead.
-- **2025-10** · WebMD: [Promoted to Team Lead, Medscape AI & Professional Apps](https://www.linkedin.com/in/bibutikoley/) — Took over the Medscape AI and professional apps team after three years as a senior engineer.
+- **2025-10** · WebMD: [Promoted to Team Lead, Medscape AI & Professional Apps](https://www.linkedin.com/in/bibutikoley/) — Leading the Medscape AI and professional apps team with full ownership, three years after joining as a senior engineer.
 - **2025-06** · WebMD: 🏆 [Highflier Award](https://www.linkedin.com/in/bibutikoley/) — Second time: awarded for April–June 2025.
 - **2023-06** · WebMD: 🏆 [Highflier Award](https://www.linkedin.com/in/bibutikoley/) — First time: awarded for April–June 2023, within a year of joining.
 - **2022-10** · WebMD: [Joined WebMD as Senior Software Engineer](https://www.linkedin.com/in/bibutikoley/) — Moved to one of the largest health information platforms to work on its Android apps.
